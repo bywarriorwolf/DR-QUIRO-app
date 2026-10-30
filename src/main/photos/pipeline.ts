@@ -5,8 +5,9 @@
  * Inicial photos -> black & white (alpha kept); Final photos keep colour.
  */
 import { pairedPersonHeight } from './layoutMath';
-import { CANVAS, makeCutout, personHeightFor, renderSlot } from './compose';
-import type { BackgroundRemover } from './bgremove';
+import { CANVAS, personHeightFor, preparePhoto, renderSlot, type CutoutChoice } from './compose';
+import type { RawRgb } from './bgremove';
+import type { Mask } from './alpha';
 
 export class PhotoProcessingError extends Error {
   constructor(
@@ -22,18 +23,32 @@ export class PhotoProcessingError extends Error {
 export interface PipelineInput {
   inicial: string[]; // file paths in order
   final: string[]; // empty for Inicial reports
-  remover: BackgroundRemover | null;
+  /** Per photo. Missing entries are 'auto' (cut out, fall back to the original when the mask looks bad). */
+  inicialChoice?: CutoutChoice[];
+  finalChoice?: CutoutChoice[];
+  remover: { mask(img: RawRgb): Promise<Mask> } | null;
   onProgress?: (done: number, total: number) => void;
 }
 
-export async function renderReportPhotos(input: PipelineInput): Promise<{ inicial: Buffer[]; final: Buffer[] }> {
+export interface RenderedPhotos {
+  inicial: Buffer[];
+  final: Buffer[];
+  /** Indexes whose cutout was refused and replaced by the original photo. */
+  unreliableInicial: number[];
+  unreliableFinal: number[];
+}
+
+export async function renderReportPhotos(input: PipelineInput): Promise<RenderedPhotos> {
   const total = input.inicial.length + input.final.length;
-  const out = { inicial: [] as Buffer[], final: [] as Buffer[] };
+  const out: RenderedPhotos = { inicial: [], final: [], unreliableInicial: [], unreliableFinal: [] };
   let done = 0;
   const n = Math.max(input.inicial.length, input.final.length);
   const cut = async (which: 'inicial' | 'final', i: number) => {
     try {
-      return await makeCutout(input[which][i], input.remover);
+      const choice = (which === 'inicial' ? input.inicialChoice : input.finalChoice)?.[i] ?? 'auto';
+      const prepared = await preparePhoto(input[which][i], input.remover, choice);
+      if (prepared.unreliable) (which === 'inicial' ? out.unreliableInicial : out.unreliableFinal).push(i);
+      return prepared.cutout;
     } catch (e) {
       throw new PhotoProcessingError(which, i, e);
     }

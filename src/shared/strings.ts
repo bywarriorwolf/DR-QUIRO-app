@@ -24,6 +24,10 @@ export const S = {
   missingAntes: 'Te faltó subir las fotos de “ANTES”', // Figma pattern, accent fixed
   missingDespues: 'Te faltó subir las fotos de “DESPUÉS”', // Figma "falto/DESPUES" — accents fixed
   removePhoto: 'Quitar foto', // app (tooltip / a11y)
+  cutoutUnreliable: 'El recorte de esta foto no es fiable. Se usará la foto original.',
+  cutoutBadge: 'No fiable',
+  useOriginal: 'Usar foto original',
+  useCutout: 'Usar recorte',
 
   // Form (Figma)
   nombre: 'Nombre',

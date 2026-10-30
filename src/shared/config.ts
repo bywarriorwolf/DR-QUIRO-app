@@ -38,10 +38,22 @@ export const CANVA = {
   callbackPath: '/callback',
   /** How long we wait for the user to finish sign-in in the browser. */
   loginTimeoutMs: 5 * 60_000,
-  /** Parallel photo uploads. */
-  uploadConcurrency: 4,
-  /** Retries for uploads / tool calls that fail with transient errors. */
+  /**
+   * Photo uploads are one at a time. Canva answers a burst of
+   * create-upload-url calls with "Too many requests".
+   */
+  uploadConcurrency: 1,
+  /** Pause between successful upload calls, so the next one is not immediate. */
+  uploadGapMs: 800,
+  /** Quick retries for a non-rate-limit upload failure (single-use URL). */
   maxRetries: 3,
+  /** Tries, including the first, when Canva returns 429 / Too many requests. */
+  rateLimitAttempts: 6,
+  /** First rate-limit wait. Later waits double, plus a little jitter. */
+  rateLimitBaseMs: 2_000,
+  rateLimitMaxDelayMs: 45_000,
+  /** Give up if the next wait would push the total pause past this. */
+  rateLimitTotalCapMs: 3 * 60_000,
   /** Title pattern. Tokens: {TIPO} {Nombre} {Apellido} {Fecha} */
   titlePattern: 'REPORTE {TIPO} {Nombre} {Apellido} - {Fecha} - A5',
   titleTypeWord: { inicial: 'INICIAL', comparativo: 'COMPARATIVO' } satisfies Record<ReportType, string>,
@@ -111,7 +123,13 @@ export const LAYOUT = {
   maxUploadBytes: 2 * 1024 * 1024,
 } as const;
 
-/** Background-removal model (rembg "isnet-general-use", Apache-2.0). */
+/**
+ * Background-removal model. This test build keeps rembg isnet-general-use
+ * (Apache-2.0, ~171 MB, ~0.7 s/image on CPU). BiRefNet-lite (MIT, ZhengPeng7)
+ * was measured and not shipped: the FP32 ONNX is 214 MB and ~9 s/image, and
+ * the 110 MB FP16 file is ~28 s/image because this ONNX Runtime build has no
+ * CPU kernels for its float16 ops. RMBG-2.0 was skipped (non-commercial).
+ */
 export const MODEL = {
   fileName: 'isnet-general-use.onnx',
   url: 'https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-general-use.onnx',

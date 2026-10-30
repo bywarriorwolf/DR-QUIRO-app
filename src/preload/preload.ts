@@ -6,9 +6,6 @@ import { contextBridge, ipcRenderer, webUtils } from 'electron';
 import { IPC } from '../shared/channels';
 import type { DrQuiroApi } from '../shared/ipc';
 
-// Lets the caption CSS leave the macOS traffic lights clickable.
-document.documentElement.dataset.platform = process.platform;
-
 function subscribe<T>(channel: string, cb: (v: T) => void): () => void {
   const listener = (_e: unknown, v: T) => cb(v);
   ipcRenderer.on(channel, listener);

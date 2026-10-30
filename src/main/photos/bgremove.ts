@@ -54,13 +54,43 @@ export class BackgroundRemover {
     return new BackgroundRemover(ort, session);
   }
 
-  /** Returns an alpha mask (0-255) with the same size as the input. */
+  /**
+   * Alpha mask the same size as the input.
+   * The photo is letterboxed (not stretched) into the model square. Portrait
+   * frames also get a second pass on the lower 60%, and the stronger alpha wins,
+   * so a foot that disappeared in the full-frame pass can come back.
+   */
   async mask(img: RawRgb): Promise<Mask> {
+    const full = await this.infer(img);
+    if (img.height < img.width * 1.05) return full;
+    const top = Math.floor(img.height * 0.4);
+    const cropH = img.height - top;
+    const crop = Buffer.alloc(img.width * cropH * 3);
+    for (let y = 0; y < cropH; y++) {
+      img.data.copy(crop, y * img.width * 3, (top + y) * img.width * 3, (top + y + 1) * img.width * 3);
+    }
+    const lower = await this.infer({ data: crop, width: img.width, height: cropH });
+    const data = new Uint8Array(full.data);
+    for (let i = 0; i < lower.data.length; i++) if (lower.data[i] > data[top * img.width + i]) data[top * img.width + i] = lower.data[i];
+    return { data, width: img.width, height: img.height };
+  }
+
+  /** Letterbox to the model square, run, then map the mask back to the original pixels. */
+  private async infer(img: RawRgb): Promise<Mask> {
     const size = MODEL.inputSize;
-    const resized = await sharp(img.data, { raw: { width: img.width, height: img.height, channels: 3 } })
-      .resize(size, size, { fit: 'fill', kernel: 'lanczos3' })
+    const scale = Math.min(size / img.width, size / img.height);
+    const contentW = Math.max(1, Math.round(img.width * scale));
+    const contentH = Math.max(1, Math.round(img.height * scale));
+    const padX = Math.floor((size - contentW) / 2);
+    const padY = Math.floor((size - contentH) / 2);
+    const fitted = await sharp(img.data, { raw: { width: img.width, height: img.height, channels: 3 } })
+      .resize(contentW, contentH, { fit: 'fill', kernel: 'lanczos3' })
       .raw()
       .toBuffer();
+    const resized = Buffer.alloc(size * size * 3, 0);
+    for (let y = 0; y < contentH; y++) {
+      fitted.copy(resized, ((padY + y) * size + padX) * 3, y * contentW * 3, (y + 1) * contentW * 3);
+    }
 
     let max = 0;
     for (let i = 0; i < resized.length; i++) if (resized[i] > max) max = resized[i];
@@ -86,12 +116,13 @@ export class BackgroundRemover {
     const small = Buffer.alloc(plane);
     for (let i = 0; i < plane; i++) small[i] = Math.max(0, Math.min(255, Math.floor(((pred[i] - mi) / range) * 255)));
 
-    const full = await sharp(small, { raw: { width: size, height: size, channels: 1 } })
+    const content = await sharp(small, { raw: { width: size, height: size, channels: 1 } })
+      .extract({ left: padX, top: padY, width: contentW, height: contentH })
       .resize(img.width, img.height, { fit: 'fill', kernel: 'lanczos3' })
       .extractChannel(0)
       .raw()
       .toBuffer();
-    return { data: new Uint8Array(full.buffer, full.byteOffset, full.length), width: img.width, height: img.height };
+    return { data: new Uint8Array(content.buffer, content.byteOffset, content.length), width: img.width, height: img.height };
   }
 
   async dispose(): Promise<void> {

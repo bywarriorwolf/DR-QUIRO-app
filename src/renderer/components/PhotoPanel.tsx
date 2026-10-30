@@ -23,19 +23,39 @@ interface Props {
   tabs: Tab[];
   active: Tab;
   photos: ImportedPhoto[];
+  /** Photo ids the user wants placed as the original frame. */
+  useOriginal: Record<string, boolean>;
+  /** Photo ids whose last cutout was refused. */
+  unreliable: Record<string, boolean>;
   tabErrors: Record<Tab, boolean>;
   notice: ZoneNotice;
+  cutoutNotice: boolean;
   importing: { done: number; total: number } | null;
   onTab(tab: Tab): void;
   onDropFiles(files: File[]): void;
   onPick(): void;
   onReorder(photos: ImportedPhoto[]): void;
   onRemove(id: string): void;
+  onToggleOriginal(id: string): void;
 }
 
 const TAB_LABEL: Record<Tab, string> = { inicial: S.tabInicial, final: S.tabFinal };
 
-function SortablePhoto({ photo, index, onRemove }: { photo: ImportedPhoto; index: number; onRemove(id: string): void }) {
+function SortablePhoto({
+  photo,
+  index,
+  original,
+  unreliable,
+  onRemove,
+  onToggleOriginal,
+}: {
+  photo: ImportedPhoto;
+  index: number;
+  original: boolean;
+  unreliable: boolean;
+  onRemove(id: string): void;
+  onToggleOriginal(id: string): void;
+}) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: photo.id });
   return (
     <div
@@ -47,6 +67,17 @@ function SortablePhoto({ photo, index, onRemove }: { photo: ImportedPhoto; index
       aria-label={`${index + 1}. ${photo.name}`}
     >
       <img src={photo.thumbDataUrl} alt="" draggable={false} />
+      <button
+        type="button"
+        className="tile__mode"
+        aria-pressed={original}
+        onPointerDown={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+        onClick={() => onToggleOriginal(photo.id)}
+      >
+        {original ? S.useCutout : S.useOriginal}
+      </button>
+      {unreliable && <div className="tile__warn">{S.cutoutBadge}</div>}
       <button
         type="button"
         className="tile__remove"
@@ -113,6 +144,7 @@ export function PhotoPanel(p: Props) {
 
   return (
     <section className="photos">
+      {p.cutoutNotice && <div className="cutout-banner">{S.cutoutUnreliable}</div>}
       <div className="tabs" role="tablist">
         {p.tabs.map((t) => (
           <button
@@ -158,7 +190,15 @@ export function PhotoPanel(p: Props) {
               <SortableContext items={p.photos.map((x) => x.id)} strategy={rectSortingStrategy}>
                 <div className="grid">
                   {p.photos.map((photo, i) => (
-                    <SortablePhoto key={photo.id} photo={photo} index={i} onRemove={p.onRemove} />
+                    <SortablePhoto
+                      key={photo.id}
+                      photo={photo}
+                      index={i}
+                      original={!!p.useOriginal[photo.id]}
+                      unreliable={!!p.unreliable[photo.id]}
+                      onRemove={p.onRemove}
+                      onToggleOriginal={p.onToggleOriginal}
+                    />
                   ))}
                   {p.importing && (
                     <div className="tile tile--status">
