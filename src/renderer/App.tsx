@@ -24,9 +24,6 @@ export function App() {
   const [form, setForm] = useState<Form>(EMPTY_FORM);
   const [tab, setTab] = useState<Tab>('inicial');
   const [photos, setPhotos] = useState<Record<Tab, ImportedPhoto[]>>({ inicial: [], final: [] });
-  const [useOriginal, setUseOriginal] = useState<Record<string, boolean>>({});
-  const [unreliable, setUnreliable] = useState<Record<string, boolean>>({});
-  const [cutoutNotice, setCutoutNotice] = useState(false);
   const [notice, setNotice] = useState<Record<Tab, ZoneNotice>>({ inicial: null, final: null });
   const [importing, setImporting] = useState<{ tab: Tab; done: number; total: number } | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -157,27 +154,17 @@ export function App() {
       return;
     }
     setModal({ kind: 'progress', fraction: 0 });
-    const ids = [...photos.inicial, ...photos.final].map((x) => x.id);
     const res = await api.createReport({
       form,
       inicial: photos.inicial.map((x) => x.id),
       final: form.type === 'comparativo' ? photos.final.map((x) => x.id) : [],
-      useOriginal: ids.filter((id) => useOriginal[id] === true),
-      forceCutout: ids.filter((id) => useOriginal[id] === false),
     });
-    if (res.ok) {
-      if (res.unreliableIds.length) {
-        setUnreliable((s) => ({ ...s, ...Object.fromEntries(res.unreliableIds.map((id) => [id, true])) }));
-        setUseOriginal((s) => ({ ...s, ...Object.fromEntries(res.unreliableIds.map((id) => [id, true])) }));
-        setCutoutNotice(true);
-      }
-      setModal({ kind: 'done', url: res.editUrl });
-    }
+    if (res.ok) setModal({ kind: 'done', url: res.editUrl });
     else {
       setModal({ kind: 'error', code: res.code, detail: res.message });
       if (res.code === 'notConnected') setAuth(await api.authStatus());
     }
-  }, [validation, auth.connected, form, photos, useOriginal]);
+  }, [validation, auth.connected, form, photos]);
 
   return (
     <div className="stage">
@@ -206,12 +193,8 @@ export function App() {
               onDropFiles={onDropFiles}
               onPick={onPick}
               onReorder={(list) => setPhotos((s) => ({ ...s, [activeTab]: list }))}
-            onRemove={onRemove}
-            useOriginal={useOriginal}
-            unreliable={unreliable}
-            cutoutNotice={cutoutNotice}
-            onToggleOriginal={(id) => setUseOriginal((s) => ({ ...s, [id]: s[id] !== true ? true : false }))}
-          />
+              onRemove={onRemove}
+            />
             <ReportForm
               form={form}
               errors={errors}

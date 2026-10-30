@@ -26,10 +26,6 @@ export const createReportSchema = z.object({
   form: reportFormSchema,
   inicial: z.array(photoIdSchema).max(21),
   final: z.array(photoIdSchema).max(21),
-  /** Photos the user chose to place without background removal. */
-  useOriginal: z.array(photoIdSchema).max(42).optional(),
-  /** Photos the user wants cut out even if the quality guard would refuse. */
-  forceCutout: z.array(photoIdSchema).max(42).optional(),
 });
 export type CreateReportRequest = z.infer<typeof createReportSchema>;
 
@@ -90,7 +86,7 @@ export type ErrorCode =
   | 'unknown';
 
 export type CreateReportResult =
-  | { ok: true; editUrl: string; designId: string; title: string; unreliableIds: string[] }
+  | { ok: true; editUrl: string; designId: string; title: string }
   | { ok: false; code: ErrorCode; message?: string };
 
 /** API exposed on window.drquiro by the preload script. */

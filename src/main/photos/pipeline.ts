@@ -5,9 +5,8 @@
  * Inicial photos -> black & white (alpha kept); Final photos keep colour.
  */
 import { pairedPersonHeight } from './layoutMath';
-import { CANVAS, personHeightFor, preparePhoto, renderSlot, type CutoutChoice } from './compose';
-import type { RawRgb } from './bgremove';
-import type { Mask } from './alpha';
+import { CANVAS, makeCutout, personHeightFor, renderSlot } from './compose';
+import type { BackgroundRemover } from './bgremove';
 
 export class PhotoProcessingError extends Error {
   constructor(
@@ -23,32 +22,18 @@ export class PhotoProcessingError extends Error {
 export interface PipelineInput {
   inicial: string[]; // file paths in order
   final: string[]; // empty for Inicial reports
-  /** Per photo. Missing entries are 'auto' (cut out, fall back to the original when the mask looks bad). */
-  inicialChoice?: CutoutChoice[];
-  finalChoice?: CutoutChoice[];
-  remover: { mask(img: RawRgb): Promise<Mask> } | null;
+  remover: BackgroundRemover | null;
   onProgress?: (done: number, total: number) => void;
 }
 
-export interface RenderedPhotos {
-  inicial: Buffer[];
-  final: Buffer[];
-  /** Indexes whose cutout was refused and replaced by the original photo. */
-  unreliableInicial: number[];
-  unreliableFinal: number[];
-}
-
-export async function renderReportPhotos(input: PipelineInput): Promise<RenderedPhotos> {
+export async function renderReportPhotos(input: PipelineInput): Promise<{ inicial: Buffer[]; final: Buffer[] }> {
   const total = input.inicial.length + input.final.length;
-  const out: RenderedPhotos = { inicial: [], final: [], unreliableInicial: [], unreliableFinal: [] };
+  const out = { inicial: [] as Buffer[], final: [] as Buffer[] };
   let done = 0;
   const n = Math.max(input.inicial.length, input.final.length);
   const cut = async (which: 'inicial' | 'final', i: number) => {
     try {
-      const choice = (which === 'inicial' ? input.inicialChoice : input.finalChoice)?.[i] ?? 'auto';
-      const prepared = await preparePhoto(input[which][i], input.remover, choice);
-      if (prepared.unreliable) (which === 'inicial' ? out.unreliableInicial : out.unreliableFinal).push(i);
-      return prepared.cutout;
+      return await makeCutout(input[which][i], input.remover);
     } catch (e) {
       throw new PhotoProcessingError(which, i, e);
     }

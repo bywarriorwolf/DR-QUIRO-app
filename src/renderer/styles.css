@@ -336,48 +336,6 @@ html[data-platform='darwin'] .titlebar::before {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   cursor: grabbing;
 }
-.tile__mode {
-  position: absolute;
-  left: 6px;
-  right: 40px;
-  bottom: 6px;
-  height: 22px;
-  padding: 0 6px;
-  border: 0;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--c-green);
-  font-size: 9px;
-  font-weight: 700;
-  line-height: 22px;
-}
-.tile__warn {
-  position: absolute;
-  left: 6px;
-  right: 6px;
-  top: 6px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--c-red);
-  font-size: 8px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-.cutout-banner {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -30px;
-  z-index: 4;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: #fff4f4;
-  color: var(--c-red);
-  font-size: 12px;
-  font-weight: 700;
-  text-align: center;
-}
 .tile__remove {
   position: absolute;
   right: 12px;
