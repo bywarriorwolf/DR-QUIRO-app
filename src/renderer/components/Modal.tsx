@@ -2,13 +2,13 @@ import { CircleCheckBig, X } from 'lucide-react';
 import { useEffect } from 'react';
 import type { ErrorCode } from '../../shared/ipc';
 import { S } from '../../shared/strings';
-import yoda from '../assets/baby-yoda-waiting.gif';
+import yoda from '../assets/baby-yoda-waiting-modal.webp';
 import { ProgressBar } from './ProgressBar';
 
 export type ModalState =
   | { kind: 'progress'; fraction: number }
   | { kind: 'done'; url: string }
-  | { kind: 'error'; code: ErrorCode }
+  | { kind: 'error'; code: ErrorCode; detail?: string }
   | null;
 
 interface Props {
@@ -52,6 +52,7 @@ export function Modal({ state, onOpenDoc, onRetry, onClose }: Props) {
             </button>
             <div className="modal__title modal__title--error">{S.errorTitle}</div>
             <div className="modal__body">{S.errors[state.code]}</div>
+            {state.detail && <div className="modal__detail">{state.detail}</div>}
             <button type="button" className="pill-button" onClick={onRetry} autoFocus>
               {S.retry}
             </button>

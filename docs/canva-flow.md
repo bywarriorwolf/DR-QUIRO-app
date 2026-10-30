@@ -12,7 +12,7 @@ Tokens are never logged.
 
 ## Creating a report (`src/main/canva/runner.ts`)
 
-1. **Upload first.** Every slot PNG is uploaded through `create-upload-url` (4 in parallel, with retries) and the app waits for its asset ID. Uploading before copying means a failed upload never leaves a half-made design.
+1. **Upload first.** Every slot PNG is uploaded through `create-upload-url`, one at a time, with a short pause between calls. A 429 / "Too many requests" response is retried with exponential backoff and jitter (Retry-After is honored, up to 6 tries, and the waits stop after about three minutes). Asset ids already obtained are kept, so a retry does not upload those photos again. The "Creando Documento" modal stays up for the whole wait. Uploading before copying means a network problem never leaves a half-made design.
 2. **Copy the template** with `copy-design`: `DAHZcKDyN90` (Inicial) or `DAHZcAKxsQg` (Comparativo). The originals are **never** opened for editing. `assertEditable` refuses any ID in `protectedDesignIds` (`DAHWWjbFWBs`, the real example, is also on that list).
 3. **Edit inside a transaction**: `start-editing-transaction` on the copy, then `perform-editing-operations` batches built by `ops.ts`:
    - `find_and_replace_text` for the name and date placeholders on the cover, and for the four injury lines on page 11 when the template has those placeholders. The Inicial template does. The Comparativo template's page 11 is a closing page without them, so it is left unchanged even though the form still requires the injury text.

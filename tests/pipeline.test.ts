@@ -70,5 +70,58 @@ describe('photo pipeline (golden geometry)', () => {
     const p = path.join(os.tmpdir(), `drq-${process.pid}.jpg`);
     await fs.writeFile(p, jpg);
     await expect(renderReportPhotos({ inicial: [p], final: [], remover: null })).rejects.toMatchObject({ name: 'PhotoProcessingError', which: 'inicial', index: 0 });
+    await expect(renderReportPhotos({ inicial: [p], final: [], inicialOriginal: [false], remover: null })).rejects.toMatchObject({ name: 'PhotoProcessingError', which: 'inicial', index: 0 });
+  });
+
+  it('a manual original skips the model, stays black and white on Inicial, and shares the Comparativo baseline', async () => {
+    let masks = 0;
+    const remover = {
+      mask: async () => {
+        masks += 1;
+        throw new Error('el modelo no debe correr');
+      },
+    } as never;
+    const red = path.join(os.tmpdir(), `drq-${process.pid}-red.jpg`);
+    const blue = path.join(os.tmpdir(), `drq-${process.pid}-blue.jpg`);
+    await fs.writeFile(red, await sharp({ create: { width: 180, height: 420, channels: 3, background: '#d02020' } }).jpeg().toBuffer());
+    await fs.writeFile(blue, await sharp({ create: { width: 320, height: 220, channels: 3, background: '#2040d0' } }).jpeg().toBuffer());
+
+    const solo = await renderReportPhotos({ inicial: [red], final: [], inicialOriginal: [true], remover });
+    const a = await analyse(solo.inicial[0]);
+    expect(masks).toBe(0);
+    expect(a.maxChroma).toBeLessThanOrEqual(1);
+    const mid = await sharp(solo.inicial[0]).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+    const cx = Math.round(a.cx);
+    const cy = Math.round((a.top + a.bottom) / 2);
+    const pi = (cy * mid.info.width + cx) * 4;
+    expect(mid.data[pi + 3]).toBeGreaterThan(200);
+
+    const pair = await renderReportPhotos({
+      inicial: [red],
+      final: [blue],
+      inicialOriginal: [true],
+      finalOriginal: [true],
+      remover,
+    });
+    const ini = await analyse(pair.inicial[0]);
+    const fin = await analyse(pair.final[0]);
+    expect(masks).toBe(0);
+    expect(ini.maxChroma).toBeLessThanOrEqual(1);
+    expect(fin.maxChroma).toBeGreaterThan(10);
+    expect(Math.abs(ini.height - fin.height)).toBeLessThanOrEqual(2);
+    expect(Math.abs(ini.bottom - fin.bottom)).toBeLessThanOrEqual(2);
+
+    const mixed = await renderReportPhotos({
+      inicial: [red],
+      final: [fx(2)],
+      inicialOriginal: [true],
+      finalOriginal: [false],
+      remover: null,
+    });
+    const left = await analyse(mixed.inicial[0]);
+    const right = await analyse(mixed.final[0]);
+    expect(left.maxChroma).toBeLessThanOrEqual(1);
+    expect(Math.abs(left.bottom - right.bottom)).toBeLessThanOrEqual(2);
+    expect(Math.abs(left.height - right.height)).toBeLessThanOrEqual(2);
   });
 });

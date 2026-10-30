@@ -8,6 +8,10 @@ import { createRoot } from 'react-dom/client';
 import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { App } from './App';
 
+// Preload runs before documentElement exists, so the platform flag lives here.
+const ua = navigator.userAgent;
+document.documentElement.dataset.platform = ua.includes('Mac') ? 'darwin' : ua.includes('Windows') ? 'win32' : 'linux';
+
 // Theme colours (src/shared/theme.ts) -> CSS variables.
 for (const [k, v] of Object.entries(THEME)) {
   document.documentElement.style.setProperty(`--c-${k.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())}`, v);

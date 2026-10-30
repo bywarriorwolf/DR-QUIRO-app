@@ -24,6 +24,7 @@ export function App() {
   const [form, setForm] = useState<Form>(EMPTY_FORM);
   const [tab, setTab] = useState<Tab>('inicial');
   const [photos, setPhotos] = useState<Record<Tab, ImportedPhoto[]>>({ inicial: [], final: [] });
+  const [useOriginal, setUseOriginal] = useState<Record<string, boolean>>({});
   const [notice, setNotice] = useState<Record<Tab, ZoneNotice>>({ inicial: null, final: null });
   const [importing, setImporting] = useState<{ tab: Tab; done: number; total: number } | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -119,6 +120,12 @@ export function App() {
 
   const onRemove = (id: string) => {
     setPhotos((s) => ({ ...s, [activeTab]: s[activeTab].filter((x) => x.id !== id) }));
+    setUseOriginal((s) => {
+      if (s[id] !== true) return s;
+      const next = { ...s };
+      delete next[id];
+      return next;
+    });
     setNotice((s) => ({ ...s, [activeTab]: null }));
     void api.releasePhotos([id]); // removes only the app's temp copy, never the original
   };
@@ -154,17 +161,19 @@ export function App() {
       return;
     }
     setModal({ kind: 'progress', fraction: 0 });
+    const chosen = [...photos.inicial, ...(form.type === 'comparativo' ? photos.final : [])];
     const res = await api.createReport({
       form,
       inicial: photos.inicial.map((x) => x.id),
       final: form.type === 'comparativo' ? photos.final.map((x) => x.id) : [],
+      useOriginal: chosen.filter((x) => useOriginal[x.id] === true).map((x) => x.id),
     });
     if (res.ok) setModal({ kind: 'done', url: res.editUrl });
     else {
-      setModal({ kind: 'error', code: res.code });
+      setModal({ kind: 'error', code: res.code, detail: res.message });
       if (res.code === 'notConnected') setAuth(await api.authStatus());
     }
-  }, [validation, auth.connected, form, photos]);
+  }, [validation, auth.connected, form, photos, useOriginal]);
 
   return (
     <div className="stage">
@@ -194,6 +203,8 @@ export function App() {
               onPick={onPick}
               onReorder={(list) => setPhotos((s) => ({ ...s, [activeTab]: list }))}
               onRemove={onRemove}
+              useOriginal={useOriginal}
+              onToggleOriginal={(id) => setUseOriginal((s) => ({ ...s, [id]: s[id] !== true }))}
             />
             <ReportForm
               form={form}

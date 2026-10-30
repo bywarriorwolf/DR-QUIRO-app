@@ -3,10 +3,9 @@
  * Every IPC payload is validated with zod (src/shared/ipc.ts) and every
  * handler checks that the sender is our own page.
  */
-import { app, BrowserWindow, dialog, ipcMain, safeStorage, screen, session, shell, type BrowserWindowConstructorOptions, type IpcMainInvokeEvent } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, Menu, safeStorage, screen, session, shell, type BrowserWindowConstructorOptions, type IpcMainInvokeEvent } from 'electron';
 import { existsSync } from 'node:fs';
 import { promises as fs } from 'node:fs';
-import { release } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MODEL } from '../shared/config';
@@ -20,11 +19,12 @@ import {
   type CreateReportResult,
   type ProgressEvent,
 } from '../shared/ipc';
+import { S } from '../shared/strings';
 import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { McpCanvaSession, MockCanvaSession, type CanvaSession } from './canva/connection';
 import { runReport } from './canva/runner';
 import { EncryptedFileSecretStore } from './canva/secretStore';
-import { errorCode, ModelMissingError } from './errors';
+import { errorCode, ModelMissingError, publicErrorDetail } from './errors';
 import { initLog, log } from './log';
 import { BackgroundRemover } from './photos/bgremove';
 import { renderReportPhotos } from './photos/pipeline';
@@ -34,9 +34,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEV_URL = process.env.VITE_DEV_SERVER_URL; // set by scripts/dev.mjs only
 const MOCK = process.env.DRQUIRO_MOCK_CANVA === '1';
 const DESIGN = { width: 1440, height: 1024 }; // Figma card; the UI is zoomed to fit
-/** Card plus the translucent caption strip above it. */
+/** Card plus the caption strip above it. */
 const SHELL = { width: DESIGN.width, height: DESIGN.height + TITLE_BAR_HEIGHT };
-const OVERLAY_COLOR = '#00000000'; // RRGGBBAA, fully transparent so mica/vibrancy shows through
+/** Opaque light caption. A transparent/mica client area painted as an empty black window on Windows. */
+const OVERLAY_COLOR = '#ffffff';
+const WINDOW_BACKGROUND = '#ffffff';
 
 if (process.env.DRQUIRO_USER_DATA) app.setPath('userData', path.resolve(process.env.DRQUIRO_USER_DATA));
 
@@ -45,6 +47,8 @@ let photos: PhotoStore;
 let canva: CanvaSession;
 let remover: BackgroundRemover | null = null;
 let busy = false;
+/** sha256 of a slot PNG -> Canva asset id. A retry of the same photos does not upload again. */
+const uploadedAssetIds = new Map<string, string>();
 let lastMockDir: string | null = null;
 
 function rendererIndex() {
@@ -118,8 +122,9 @@ function registerIpc() {
       return importWithDelay(paths);
     }
     const r = await dialog.showOpenDialog(win!, {
+      title: S.pickPhotos,
       properties: ['openFile', 'multiSelections'],
-      filters: [{ name: 'PNG / JPG', extensions: ['png', 'jpg', 'jpeg'] }],
+      filters: [{ name: S.pickPhotosFilter, extensions: ['png', 'jpg', 'jpeg'] }],
     });
     if (r.canceled || r.filePaths.length === 0) return { photos: [], rejected: [] };
     return photos.import(r.filePaths.slice(0, 100), (done, total) => send(IPC.importProgress, { done, total }));
@@ -137,13 +142,19 @@ function registerIpc() {
     try {
       const inicial = req.inicial.map((id) => photos.pathOf(id));
       const final = req.form.type === 'comparativo' ? req.final.map((id) => photos.pathOf(id)) : [];
+      const wantOriginal = new Set(req.useOriginal ?? []);
+      const inicialOriginal = req.inicial.map((id) => wantOriginal.has(id));
+      const finalOriginal = (req.form.type === 'comparativo' ? req.final : []).map((id) => wantOriginal.has(id));
       log(`report: ${req.form.type}, ${inicial.length}+${final.length} photos`);
       progress({ stage: 'photos', fraction: 0.02 });
-      const rm = await getRemover();
-        log('report: remover ready');
+      const needsCutout = [...inicialOriginal, ...finalOriginal].some((chosen) => !chosen);
+      const rm = needsCutout ? await getRemover() : null;
+      log(rm ? 'report: remover ready' : 'report: original frames only, remover skipped');
       const pngs = await renderReportPhotos({
         inicial,
         final,
+        inicialOriginal,
+        finalOriginal,
         remover: rm,
         onProgress: (d, t) => {
           log(`report: photo ${d}/${t}`);
@@ -155,6 +166,7 @@ function registerIpc() {
         form: req.form,
         inicialPngs: pngs.inicial,
         finalPngs: pngs.final,
+        assetCache: uploadedAssetIds,
         log,
         onProgress: (p) => {
           const f = p.total ? p.done / p.total : 1;
@@ -171,7 +183,7 @@ function registerIpc() {
       return { ok: true, editUrl: res.editUrl, designId: res.designId, title: res.title };
     } catch (e) {
       log(`report failed: ${(e as Error)?.stack ?? e}`);
-      return { ok: false, code: errorCode(e) };
+      return { ok: false, code: errorCode(e), message: publicErrorDetail(e) };
     } finally {
       busy = false;
     }
@@ -205,12 +217,6 @@ async function saveMockOutput(pngs: { inicial: Buffer[]; final: Buffer[] }): Pro
   return dir;
 }
 
-/** Mica on Windows 11 22H2+; acrylic on earlier Windows where mica is unavailable. */
-function windowsBackgroundMaterial(): 'mica' | 'acrylic' {
-  const build = Number(release().split('.')[2] ?? 0);
-  return build >= 22621 ? 'mica' : 'acrylic';
-}
-
 function overlayHeight(zoom: number): number {
   return Math.max(1, Math.round(TITLE_BAR_HEIGHT * zoom));
 }
@@ -221,11 +227,15 @@ function fitZoom() {
   const zoom = Math.max(0.4, Math.min(w / SHELL.width, h / SHELL.height));
   win.webContents.setZoomFactor(zoom);
   // Keep the native caption buttons the same height as the CSS drag strip.
-  if (process.platform === 'win32' || process.platform === 'linux') {
-    win.setTitleBarOverlay({ color: OVERLAY_COLOR, symbolColor: THEME.green, height: overlayHeight(zoom) });
-  } else if (process.platform === 'darwin') {
-    const bar = TITLE_BAR_HEIGHT * zoom;
-    win.setWindowButtonPosition({ x: Math.round(14 * zoom), y: Math.max(0, Math.round((bar - 14) / 2)) });
+  try {
+    if (process.platform === 'win32' || process.platform === 'linux') {
+      win.setTitleBarOverlay({ color: OVERLAY_COLOR, symbolColor: THEME.green, height: overlayHeight(zoom) });
+    } else if (process.platform === 'darwin') {
+      const bar = TITLE_BAR_HEIGHT * zoom;
+      win.setWindowButtonPosition({ x: Math.round(14 * zoom), y: Math.max(0, Math.round((bar - 14) / 2)) });
+    }
+  } catch (e) {
+    log(`title bar overlay: ${(e as Error).message}`);
   }
 }
 
@@ -234,35 +244,20 @@ function windowChrome(zoom: number): BrowserWindowConstructorOptions {
   if (process.platform === 'darwin') {
     return {
       titleBarStyle: 'hiddenInset',
-      vibrancy: 'under-window',
-      visualEffectState: 'active',
-      transparent: true,
-      backgroundColor: '#00000000',
+      backgroundColor: WINDOW_BACKGROUND,
+      transparent: false,
       trafficLightPosition: { x: Math.round(14 * zoom), y: Math.max(0, Math.round((TITLE_BAR_HEIGHT * zoom - 14) / 2)) },
     };
   }
-  if (process.platform === 'win32') {
-    // `titleBarStyle: 'hidden'` drops the default caption and, on Windows, the
-    // frame — that is what lets mica/acrylic extend into the client area.
-    // `transparent: true` is reserved for older Windows: on 11 it also strips
-    // the thick frame, so the window could not be resized or keep rounded
-    // corners. A transparent background colour lets the material show through
-    // the caption strip; the card below paints its own white background.
-    // Minimize / maximize / close stay on the overlay.
-    const material = windowsBackgroundMaterial();
-    return {
-      titleBarStyle: 'hidden',
-      titleBarOverlay: overlay,
-      backgroundMaterial: material,
-      backgroundColor: '#00000000',
-      ...(material === 'mica' ? { thickFrame: true, roundedCorners: true } : { transparent: true }),
-    };
-  }
+  // Opaque window. titleBarStyle hidden keeps our buttons; the overlay is white
+  // with the app's green symbols instead of the default dark caption bar.
+  // Do not set transparent or backgroundMaterial: on Windows that leaves the
+  // client area unpainted, so the app looks like an empty black frame.
   return {
     titleBarStyle: 'hidden',
     titleBarOverlay: overlay,
-    transparent: true,
-    backgroundColor: '#00000000',
+    backgroundColor: WINDOW_BACKGROUND,
+    transparent: false,
   };
 }
 
@@ -276,7 +271,7 @@ function createWindow() {
     minHeight: 640 + TITLE_BAR_HEIGHT,
     useContentSize: true,
     show: false,
-    title: 'DR·QUIRO Reportes',
+    title: S.appTitle,
     autoHideMenuBar: true,
     roundedCorners: true,
     thickFrame: true,
@@ -295,9 +290,22 @@ function createWindow() {
   win.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
   win.webContents.on('will-navigate', (e) => e.preventDefault());
   win.webContents.on('will-attach-webview', (e) => e.preventDefault());
-  win.webContents.on('did-finish-load', fitZoom);
+  const reveal = () => {
+    if (win && !win.isDestroyed() && !win.isVisible()) win.show();
+  };
+  win.webContents.on('did-fail-load', (_e, code, desc, url) => {
+    log(`renderer failed to load (${code}) ${desc} ${url}`);
+    reveal();
+  });
+  win.webContents.on('render-process-gone', (_e, details) => {
+    log(`renderer gone: ${details.reason}`);
+  });
+  win.webContents.on('did-finish-load', () => {
+    fitZoom();
+    reveal();
+  });
   win.on('resize', fitZoom);
-  win.once('ready-to-show', () => win?.show());
+  win.once('ready-to-show', reveal);
   if (DEV_URL) void win.loadURL(DEV_URL);
   else void win.loadFile(rendererIndex());
 }
@@ -312,6 +320,8 @@ app.on('second-instance', () => {
 });
 
 app.whenReady().then(async () => {
+  // The stock File / Edit / View menu is English. This app has its own header menu.
+  Menu.setApplicationMenu(null);
   initLog(path.join(app.getPath('userData'), 'logs'));
   session.defaultSession.setPermissionRequestHandler((_wc, _perm, cb) => cb(false));
   session.defaultSession.setPermissionCheckHandler(() => false);

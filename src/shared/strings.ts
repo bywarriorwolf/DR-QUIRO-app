@@ -1,20 +1,23 @@
 /**
  * Every user-visible Spanish string, in one place.
  *
- * Copy rule (Natalia): never add or remove words from provided copy; only the
- * accents/spelling of a word may be corrected. Strings marked "Figma" come
- * verbatim from the Figma file (accents fixed only). Strings marked "app" are
- * needed by states the Figma does not draw (failure modal, etc.) — keep them short.
+ * Copy rule (Natalia): never add or remove words from copy the clinic already
+ * approved; only the accents/spelling of a word may be corrected. Strings
+ * marked "Figma" come from the Figma file (accents fixed only). The three
+ * labels that were still in English are translated, with the drop-zone wording
+ * the clinic asked for. Strings marked "app" cover states the Figma does not
+ * draw — keep them short.
  */
 export const S = {
   appTitle: 'DR·QUIRO Reportes', // app
   connectCanva: 'Conectar a Canva', // Figma
   connecting: 'Conectando…', // app
   disconnectCanva: 'Desconectar Canva', // Figma
+  menu: 'Menú', // app (a11y)
   planSeparator: '|', // Figma ("Brian Pulgarin Vidal | Free")
 
-  // Drop zone / tabs (Figma)
-  dropHere: 'Drop Patient Photos Here', // Figma (kept verbatim: copy rule forbids rewording)
+  // Drop zone / tabs
+  dropHere: 'Arrastra aquí las fotos del paciente',
   tabInicial: 'Inicial',
   tabFinal: 'Final',
   uploading: 'Subiendo Archivos',
@@ -24,6 +27,12 @@ export const S = {
   missingAntes: 'Te faltó subir las fotos de “ANTES”', // Figma pattern, accent fixed
   missingDespues: 'Te faltó subir las fotos de “DESPUÉS”', // Figma "falto/DESPUES" — accents fixed
   removePhoto: 'Quitar foto', // app (tooltip / a11y)
+  /** Shown while the photo is cut out. Clicking switches to the original frame. */
+  useOriginal: 'Usar foto original', // app
+  /** Shown while the original frame is selected. Clicking switches back to the cutout. */
+  useCutout: 'Usar recorte', // app
+  pickPhotos: 'Seleccionar fotos', // app (file dialog title)
+  pickPhotosFilter: 'Archivos PNG y JPG', // app (file dialog filter)
 
   // Form (Figma)
   nombre: 'Nombre',
@@ -39,7 +48,7 @@ export const S = {
   },
   reporteInicial: 'Reporte Inicial',
   reporteComparativo: 'Reporte Comparativo',
-  createFile: 'Create File', // Figma (kept verbatim: copy rule forbids rewording)
+  createFile: 'Crear archivo',
   requiredField: '*Este campo es requerido',
   requiredDate: '*Ingresar Fecha',
 
@@ -47,7 +56,7 @@ export const S = {
   pickerTitle: 'Selecciona una fecha',
   pickerClear: 'Limpiar',
   pickerCancel: 'Cancelar',
-  pickerOk: 'OK',
+  pickerOk: 'Aceptar',
   prevMonth: 'Mes anterior', // app (a11y)
   nextMonth: 'Mes siguiente', // app (a11y)
 

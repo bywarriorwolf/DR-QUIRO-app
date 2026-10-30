@@ -22,7 +22,7 @@ export function Header({ auth, connecting, menuOpen, onConnect, onToggleMenu, on
           <button
             type="button"
             className="icon-button account__menu"
-            aria-label={menuOpen ? S.close : 'Menú'}
+            aria-label={menuOpen ? S.close : S.menu}
             aria-expanded={menuOpen}
             onClick={onToggleMenu}
           >

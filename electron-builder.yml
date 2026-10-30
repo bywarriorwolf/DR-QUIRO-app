@@ -2,7 +2,7 @@
 appId: com.drquiro.reportes
 productName: DR·QUIRO Reportes
 executableName: DR-QUIRO-Reportes
-copyright: Copyright © 2026 DR·QUIRO
+copyright: "© 2026 DR·QUIRO"
 directories:
   output: release
   buildResources: build
@@ -37,22 +37,27 @@ win:
   target:
     - target: nsis
       arch: [x64]
-    - target: portable
-      arch: [x64]
   # Unsigned build (no certificate). See INSTALAR.md for the SmartScreen steps.
   signAndEditExecutable: true
 nsis:
   oneClick: false
   perMachine: false            # per-user install, no admin rights needed
   allowElevation: false
-  allowToChangeInstallationDirectory: true
+  # Same folder as the previous install. A newer Setup upgrades in place and
+  # keeps app data (the uninstaller is run with /KEEP_APP_DATA). Do not ask for
+  # a new directory, or the user ends up with a second copy.
+  allowToChangeInstallationDirectory: false
   createDesktopShortcut: always
   createStartMenuShortcut: true
   shortcutName: DR·QUIRO Reportes
   deleteAppDataOnUninstall: false
+  # Spanish wizard. LCID 3082 is Spanish (Spain). installerLanguages limits the
+  # MUI language to SpanishInternational. Do not set multiLanguageInstaller to
+  # false: that path hardcodes en_US.
+  language: "3082"
+  installerLanguages:
+    - es_ES
   artifactName: DR-QUIRO-Reportes-Setup-${version}.${ext}
-portable:
-  artifactName: DR-QUIRO-Reportes-Portable-${version}.${ext}
 
 mac:
   icon: build/icon.png
