@@ -2,7 +2,7 @@ import { CircleCheckBig, X } from 'lucide-react';
 import { useEffect } from 'react';
 import type { ErrorCode } from '../../shared/ipc';
 import { S } from '../../shared/strings';
-import yoda from '../assets/baby-yoda-waiting.gif';
+import yoda from '../assets/baby-yoda-waiting-modal.webp';
 import { ProgressBar } from './ProgressBar';
 
 export type ModalState =

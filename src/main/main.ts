@@ -3,7 +3,7 @@
  * Every IPC payload is validated with zod (src/shared/ipc.ts) and every
  * handler checks that the sender is our own page.
  */
-import { app, BrowserWindow, dialog, ipcMain, safeStorage, screen, session, shell, type BrowserWindowConstructorOptions, type IpcMainInvokeEvent } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, Menu, safeStorage, screen, session, shell, type BrowserWindowConstructorOptions, type IpcMainInvokeEvent } from 'electron';
 import { existsSync } from 'node:fs';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
@@ -19,6 +19,7 @@ import {
   type CreateReportResult,
   type ProgressEvent,
 } from '../shared/ipc';
+import { S } from '../shared/strings';
 import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { McpCanvaSession, MockCanvaSession, type CanvaSession } from './canva/connection';
 import { runReport } from './canva/runner';
@@ -121,8 +122,9 @@ function registerIpc() {
       return importWithDelay(paths);
     }
     const r = await dialog.showOpenDialog(win!, {
+      title: S.pickPhotos,
       properties: ['openFile', 'multiSelections'],
-      filters: [{ name: 'PNG / JPG', extensions: ['png', 'jpg', 'jpeg'] }],
+      filters: [{ name: S.pickPhotosFilter, extensions: ['png', 'jpg', 'jpeg'] }],
     });
     if (r.canceled || r.filePaths.length === 0) return { photos: [], rejected: [] };
     return photos.import(r.filePaths.slice(0, 100), (done, total) => send(IPC.importProgress, { done, total }));
@@ -140,13 +142,19 @@ function registerIpc() {
     try {
       const inicial = req.inicial.map((id) => photos.pathOf(id));
       const final = req.form.type === 'comparativo' ? req.final.map((id) => photos.pathOf(id)) : [];
+      const wantOriginal = new Set(req.useOriginal ?? []);
+      const inicialOriginal = req.inicial.map((id) => wantOriginal.has(id));
+      const finalOriginal = (req.form.type === 'comparativo' ? req.final : []).map((id) => wantOriginal.has(id));
       log(`report: ${req.form.type}, ${inicial.length}+${final.length} photos`);
       progress({ stage: 'photos', fraction: 0.02 });
-      const rm = await getRemover();
-        log('report: remover ready');
+      const needsCutout = [...inicialOriginal, ...finalOriginal].some((chosen) => !chosen);
+      const rm = needsCutout ? await getRemover() : null;
+      log(rm ? 'report: remover ready' : 'report: original frames only, remover skipped');
       const pngs = await renderReportPhotos({
         inicial,
         final,
+        inicialOriginal,
+        finalOriginal,
         remover: rm,
         onProgress: (d, t) => {
           log(`report: photo ${d}/${t}`);
@@ -263,7 +271,7 @@ function createWindow() {
     minHeight: 640 + TITLE_BAR_HEIGHT,
     useContentSize: true,
     show: false,
-    title: 'DR·QUIRO Reportes',
+    title: S.appTitle,
     autoHideMenuBar: true,
     roundedCorners: true,
     thickFrame: true,
@@ -312,6 +320,8 @@ app.on('second-instance', () => {
 });
 
 app.whenReady().then(async () => {
+  // The stock File / Edit / View menu is English. This app has its own header menu.
+  Menu.setApplicationMenu(null);
   initLog(path.join(app.getPath('userData'), 'logs'));
   session.defaultSession.setPermissionRequestHandler((_wc, _perm, cb) => cb(false));
   session.defaultSession.setPermissionCheckHandler(() => false);

@@ -2,7 +2,7 @@
 appId: com.drquiro.reportes
 productName: DR·QUIRO Reportes
 executableName: DR-QUIRO-Reportes
-copyright: Copyright © 2026 DR·QUIRO
+copyright: "© 2026 DR·QUIRO"
 directories:
   output: release
   buildResources: build
@@ -51,6 +51,12 @@ nsis:
   createStartMenuShortcut: true
   shortcutName: DR·QUIRO Reportes
   deleteAppDataOnUninstall: false
+  # Spanish wizard. LCID 3082 is Spanish (Spain). installerLanguages limits the
+  # MUI language to SpanishInternational. Do not set multiLanguageInstaller to
+  # false: that path hardcodes en_US.
+  language: "3082"
+  installerLanguages:
+    - es_ES
   artifactName: DR-QUIRO-Reportes-Setup-${version}.${ext}
 
 mac:

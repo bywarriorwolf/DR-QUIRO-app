@@ -26,6 +26,8 @@ export const createReportSchema = z.object({
   form: reportFormSchema,
   inicial: z.array(photoIdSchema).max(21),
   final: z.array(photoIdSchema).max(21),
+  /** Photos the user chose to place as the original frame. Everyone else is cut out. */
+  useOriginal: z.array(photoIdSchema).max(42).optional(),
 });
 export type CreateReportRequest = z.infer<typeof createReportSchema>;
 

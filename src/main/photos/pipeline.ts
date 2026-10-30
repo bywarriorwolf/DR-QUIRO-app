@@ -5,7 +5,7 @@
  * Inicial photos -> black & white (alpha kept); Final photos keep colour.
  */
 import { pairedPersonHeight } from './layoutMath';
-import { CANVAS, makeCutout, personHeightFor, renderSlot } from './compose';
+import { CANVAS, decodeWorking, makeCutout, opaqueFrame, personHeightFor, renderSlot } from './compose';
 import type { BackgroundRemover } from './bgremove';
 
 export class PhotoProcessingError extends Error {
@@ -22,6 +22,12 @@ export class PhotoProcessingError extends Error {
 export interface PipelineInput {
   inicial: string[]; // file paths in order
   final: string[]; // empty for Inicial reports
+  /**
+   * Parallel to the paths. True places the original frame and skips background
+   * removal. Missing or false keeps the v1.0.3 cutout (the default).
+   */
+  inicialOriginal?: boolean[];
+  finalOriginal?: boolean[];
   remover: BackgroundRemover | null;
   onProgress?: (done: number, total: number) => void;
 }
@@ -33,6 +39,8 @@ export async function renderReportPhotos(input: PipelineInput): Promise<{ inicia
   const n = Math.max(input.inicial.length, input.final.length);
   const cut = async (which: 'inicial' | 'final', i: number) => {
     try {
+      const original = (which === 'inicial' ? input.inicialOriginal : input.finalOriginal)?.[i] === true;
+      if (original) return opaqueFrame(await decodeWorking(input[which][i]));
       return await makeCutout(input[which][i], input.remover);
     } catch (e) {
       throw new PhotoProcessingError(which, i, e);

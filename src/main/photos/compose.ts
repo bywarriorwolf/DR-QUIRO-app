@@ -68,6 +68,15 @@ export async function existingAlpha(input: Buffer | string): Promise<Mask | null
   return { data: new Uint8Array(data.buffer, data.byteOffset, data.length), width: info.width, height: info.height };
 }
 
+/**
+ * The whole working frame, fully opaque. Used only when the user picks
+ * "Usar foto original". It does not run the mask, the blob filter or the erosion.
+ */
+export function opaqueFrame(rgb: { data: Buffer; width: number; height: number }): Cutout {
+  const mask: Mask = { data: new Uint8Array(rgb.width * rgb.height).fill(255), width: rgb.width, height: rgb.height };
+  return cutoutFromMask(rgb, mask);
+}
+
 /** Background removal (or existing alpha) + clean-up + trim. Throws if no person is found. */
 export async function makeCutout(input: Buffer | string, remover: BackgroundRemover | null): Promise<Cutout> {
   const rgb = await decodeWorking(input);

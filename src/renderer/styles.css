@@ -287,13 +287,15 @@ html[data-platform='darwin'] .titlebar::before {
   margin-top: -6px;
 }
 .loader {
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
+  background: transparent;
+  pointer-events: none;
 }
 .modal__yoda {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   background: transparent;
   pointer-events: none;
@@ -335,6 +337,29 @@ html[data-platform='darwin'] .titlebar::before {
   z-index: 5;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   cursor: grabbing;
+}
+.tile__mode {
+  position: absolute;
+  left: 6px;
+  right: 38px;
+  bottom: 6px;
+  z-index: 2;
+  margin: 0;
+  padding: 3px 5px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--c-green);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  cursor: pointer;
+}
+.tile__mode:hover,
+.tile__mode:focus-visible {
+  background: #fff;
 }
 .tile__remove {
   position: absolute;
