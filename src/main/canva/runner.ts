@@ -7,10 +7,12 @@
  * first so a network problem never leaves an orphaned copy behind (the MCP
  * server has no delete tool); if a later step fails, the copy's id is logged.
  */
+import { createHash } from 'node:crypto';
 import { CANVA, type ReportType } from '../../shared/config';
 import { buildTitle, type ReportForm } from '../../shared/report';
 import { buildEditBatches } from './ops';
 import { assertOperationsApplied, CanvaToolError, parseCopyDesign, parseEditingState, parseUploadResponse, parseUploadUrl } from './parse';
+import { withCanvaRetry, type CanvaRetryOptions } from './retry';
 import { USER_INTENT, type CanvaTools } from './tools';
 import type { EditingState } from './types';
 
@@ -33,6 +35,15 @@ export interface RunReportInput {
   finalPngs: Buffer[];
   onProgress?: (p: RunnerProgress) => void;
   log?: (msg: string) => void;
+  /**
+   * sha256(png) -> Canva asset id. Survives a failed report so "Reintentar"
+   * does not upload the same photos again. Omit it and each run uploads.
+   */
+  assetCache?: Map<string, string>;
+  /** Test hook for backoff waits. Production uses the defaults in config.ts. */
+  retry?: CanvaRetryOptions;
+  /** Pause between uploads. Tests set 0. */
+  uploadGapMs?: number;
 }
 
 export interface RunReportResult {
@@ -50,30 +61,30 @@ export function assertEditable(designId: string): void {
   if ((CANVA.protectedDesignIds as readonly string[]).includes(designId)) throw new ProtectedDesignError(designId);
 }
 
-async function withRetry<T>(fn: () => Promise<T>, tries: number, log?: (m: string) => void): Promise<T> {
-  let last: unknown;
-  for (let i = 0; i < tries; i++) {
-    try {
-      return await fn();
-    } catch (e) {
-      last = e;
-      log?.(`reintento ${i + 1}/${tries}: ${(e as Error).message}`);
-      await new Promise((r) => setTimeout(r, 400 * 2 ** i));
-    }
-  }
-  throw last;
+function pngKey(png: Buffer): string {
+  return createHash('sha256').update(png).digest('hex');
 }
 
-/** Upload one PNG: fresh single-use URL per attempt (never reuse a URL). */
-async function uploadOne(tools: CanvaTools, png: Buffer, log?: (m: string) => void): Promise<string> {
-  return withRetry(
+/** Upload one PNG. A fresh single-use URL is taken per attempt; a URL is never reused. */
+async function uploadOne(tools: CanvaTools, png: Buffer, retry: CanvaRetryOptions | undefined, log?: (m: string) => void): Promise<string> {
+  return withCanvaRetry(
     async () => {
       const url = parseUploadUrl(await tools.callTool('create-upload-url', { user_intent: USER_INTENT }));
       return parseUploadResponse(await tools.upload(url, png));
     },
-    CANVA.maxRetries,
-    log,
+    { ...retry, label: 'upload', otherAttempts: CANVA.maxRetries, log },
   );
+}
+
+/** One Canva tool call, retried when the server says it is rate limiting. */
+function callCanva(
+  tools: CanvaTools,
+  name: string,
+  args: Record<string, unknown>,
+  retry: CanvaRetryOptions | undefined,
+  log?: (m: string) => void,
+) {
+  return withCanvaRetry(() => tools.callTool(name, args), { ...retry, label: name, otherAttempts: 1, log });
 }
 
 /** Runs `worker` over items with bounded concurrency, preserving order of results. */
@@ -91,25 +102,41 @@ export async function mapLimit<T, R>(items: T[], limit: number, worker: (item: T
 }
 
 export async function runReport(tools: CanvaTools, input: RunReportInput): Promise<RunReportResult> {
-  const { form, onProgress, log } = input;
+  const { form, onProgress, log, retry } = input;
+  const cache = input.assetCache;
+  const gapMs = input.uploadGapMs ?? (process.env.VITEST === 'true' ? 0 : CANVA.uploadGapMs);
+  const sleep = retry?.sleep ?? ((ms: number) => (ms > 0 && process.env.VITEST !== 'true' ? new Promise<void>((r) => setTimeout(r, ms)) : Promise.resolve()));
   const finalPngs = form.type === 'comparativo' ? input.finalPngs : [];
   const all = [...input.inicialPngs, ...finalPngs];
 
-  // 1) Upload every slot PNG.
+  // 1) Upload every slot PNG, one at a time. A rate-limit wait stays inside
+  // this call, so the "Creando Documento" modal is still on screen.
   let uploaded = 0;
   onProgress?.({ stage: 'upload', done: 0, total: all.length });
-  const assets = await mapLimit(all, CANVA.uploadConcurrency, async (png) => {
-    const id = await uploadOne(tools, png, log);
+  const assets: string[] = [];
+  for (let i = 0; i < all.length; i++) {
+    const png = all[i]!;
+    const key = pngKey(png);
+    const cached = cache?.get(key);
+    if (cached) {
+      log?.(`reutilizando asset ya subido ${cached}`);
+      assets.push(cached);
+      onProgress?.({ stage: 'upload', done: ++uploaded, total: all.length });
+      continue;
+    }
+    if (i > 0 && gapMs > 0) await sleep(gapMs);
+    const id = await uploadOne(tools, png, retry, log);
+    cache?.set(key, id);
+    assets.push(id);
     onProgress?.({ stage: 'upload', done: ++uploaded, total: all.length });
-    return id;
-  });
+  }
   const inicialAssets = assets.slice(0, input.inicialPngs.length);
   const finalAssets = assets.slice(input.inicialPngs.length);
 
   // 2) Copy the template (the original is never opened for editing).
   onProgress?.({ stage: 'copy', done: 0, total: 1 });
   const templateId = templateFor(form.type);
-  const designId = parseCopyDesign(await tools.callTool('copy-design', { design_id: templateId, user_intent: USER_INTENT }));
+  const designId = parseCopyDesign(await callCanva(tools, 'copy-design', { design_id: templateId, user_intent: USER_INTENT }, retry, log));
   assertEditable(designId);
   log?.(`copia creada: ${designId}`);
   onProgress?.({ stage: 'copy', done: 1, total: 1 });
@@ -117,33 +144,39 @@ export async function runReport(tools: CanvaTools, input: RunReportInput): Promi
   // 3) Edit inside a transaction; cancel on any failure.
   let state: EditingState = parseEditingState(
     'start-editing-transaction',
-    await tools.callTool('start-editing-transaction', { design_id: designId, user_intent: USER_INTENT }),
+    await callCanva(tools, 'start-editing-transaction', { design_id: designId, user_intent: USER_INTENT }, retry, log),
   );
   try {
     const batches = buildEditBatches(state, { form, inicialAssets, finalAssets });
     for (let i = 0; i < batches.length; i++) {
       onProgress?.({ stage: 'edit', done: i, total: batches.length });
-      const b = batches[i];
-      const res = await tools.callTool('perform-editing-operations', {
-        transaction_id: state.transaction_id,
-        page_index: b.pageIndex,
-        pages: state.pages,
-        operations: b.operations,
-        user_intent: USER_INTENT,
-      });
+      const b = batches[i]!;
+      const res = await callCanva(
+        tools,
+        'perform-editing-operations',
+        {
+          transaction_id: state.transaction_id,
+          page_index: b.pageIndex,
+          pages: state.pages,
+          operations: b.operations,
+          user_intent: USER_INTENT,
+        },
+        retry,
+        log,
+      );
       state = parseEditingState('perform-editing-operations', res, state);
       assertOperationsApplied('perform-editing-operations', res);
     }
     onProgress?.({ stage: 'commit', done: 0, total: 1 });
-    const committed = await tools.callTool('commit-editing-transaction', {
+    const committed = await callCanva(tools, 'commit-editing-transaction', {
       transaction_id: state.transaction_id,
       user_intent: USER_INTENT,
-    });
+    }, retry, log);
     if (committed.isError) throw new CanvaToolError('commit-editing-transaction', 'commit rejected');
     onProgress?.({ stage: 'commit', done: 1, total: 1 });
   } catch (e) {
     try {
-      await tools.callTool('cancel-editing-transaction', { transaction_id: state.transaction_id, user_intent: USER_INTENT });
+      await callCanva(tools, 'cancel-editing-transaction', { transaction_id: state.transaction_id, user_intent: USER_INTENT }, retry, log);
     } catch (cancelErr) {
       log?.(`no se pudo cancelar la transacción: ${(cancelErr as Error).message}`);
     }

@@ -46,6 +46,8 @@ let photos: PhotoStore;
 let canva: CanvaSession;
 let remover: BackgroundRemover | null = null;
 let busy = false;
+/** sha256 of a slot PNG -> Canva asset id. A retry of the same photos does not upload again. */
+const uploadedAssetIds = new Map<string, string>();
 let lastMockDir: string | null = null;
 
 function rendererIndex() {
@@ -156,6 +158,7 @@ function registerIpc() {
         form: req.form,
         inicialPngs: pngs.inicial,
         finalPngs: pngs.final,
+        assetCache: uploadedAssetIds,
         log,
         onProgress: (p) => {
           const f = p.total ? p.done / p.total : 1;
