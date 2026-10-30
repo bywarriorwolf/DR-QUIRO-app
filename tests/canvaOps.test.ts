@@ -65,7 +65,7 @@ describe('buildEditBatches', () => {
     expect(batches.map((b) => b.pageIndex)).toEqual([1, 4, 5, 6, 7, 8, 9, 10, 11]);
     const cover = batches[0].operations;
     expect(cover).toContainEqual(expect.objectContaining({ find_text: 'NOMBRE', replace_text: 'MARÍA JOSÉ PEÑA GÓMEZ' }));
-    expect(cover).toContainEqual(expect.objectContaining({ find_text: 'Mes DD, AAAA', replace_text: 'Julio 08, 2026' }));
+    expect(cover).toContainEqual(expect.objectContaining({ find_text: 'Mes DD, AAAA ', replace_text: 'Julio 08, 2026' }));
     expect(cover).toContainEqual({ type: 'update_title', title: 'REPORTE INICIAL María José Peña Gómez - Julio 08, 2026 - A5' });
     const fills = batches.flatMap((b) => b.operations).filter((o) => o.type === 'insert_fill');
     expect(fills).toHaveLength(21);
@@ -89,7 +89,7 @@ describe('buildEditBatches', () => {
     const batches = buildEditBatches(COMP, { form, inicialAssets: ini, finalAssets: fin });
     expect(batches.map((b) => b.pageIndex)).toEqual([1, 4, 5]);
     expect(batches[0].operations).toContainEqual(
-      expect.objectContaining({ find_text: 'Mes DD, AAAA - Mes DD, AAAA', replace_text: 'Julio 08, 2026 - Octubre 02, 2026' }),
+      expect.objectContaining({ find_text: 'Mes DD, AAAA - Mes DD, AAAA ', replace_text: 'Julio 08, 2026 - Octubre 02, 2026' }),
     );
     const allOps = batches.flatMap((b) => b.operations);
     expect(JSON.stringify(allOps)).not.toContain('XXXX');

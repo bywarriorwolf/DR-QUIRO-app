@@ -23,7 +23,7 @@ import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { McpCanvaSession, MockCanvaSession, type CanvaSession } from './canva/connection';
 import { runReport } from './canva/runner';
 import { EncryptedFileSecretStore } from './canva/secretStore';
-import { errorCode, ModelMissingError } from './errors';
+import { errorCode, ModelMissingError, publicErrorDetail } from './errors';
 import { initLog, log } from './log';
 import { BackgroundRemover } from './photos/bgremove';
 import { renderReportPhotos } from './photos/pipeline';
@@ -172,7 +172,7 @@ function registerIpc() {
       return { ok: true, editUrl: res.editUrl, designId: res.designId, title: res.title };
     } catch (e) {
       log(`report failed: ${(e as Error)?.stack ?? e}`);
-      return { ok: false, code: errorCode(e) };
+      return { ok: false, code: errorCode(e), message: publicErrorDetail(e) };
     } finally {
       busy = false;
     }

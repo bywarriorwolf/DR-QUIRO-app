@@ -755,6 +755,15 @@ html[data-platform='darwin'] .titlebar::before {
   margin-bottom: 12px;
   max-width: 440px;
 }
+.modal__detail {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a8a8a;
+  margin-top: -6px;
+  margin-bottom: 12px;
+  max-width: 440px;
+  word-break: break-word;
+}
 .modal__check {
   color: var(--c-green);
 }

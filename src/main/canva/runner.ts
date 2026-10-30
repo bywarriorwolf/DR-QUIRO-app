@@ -10,7 +10,7 @@
 import { CANVA, type ReportType } from '../../shared/config';
 import { buildTitle, type ReportForm } from '../../shared/report';
 import { buildEditBatches } from './ops';
-import { CanvaToolError, parseCopyDesign, parseEditingState, parseUploadResponse, parseUploadUrl } from './parse';
+import { assertOperationsApplied, CanvaToolError, parseCopyDesign, parseEditingState, parseUploadResponse, parseUploadUrl } from './parse';
 import { USER_INTENT, type CanvaTools } from './tools';
 import type { EditingState } from './types';
 
@@ -132,6 +132,7 @@ export async function runReport(tools: CanvaTools, input: RunReportInput): Promi
         user_intent: USER_INTENT,
       });
       state = parseEditingState('perform-editing-operations', res, state);
+      assertOperationsApplied('perform-editing-operations', res);
     }
     onProgress?.({ stage: 'commit', done: 0, total: 1 });
     const committed = await tools.callTool('commit-editing-transaction', {
