@@ -1,0 +1,5761 @@
+{
+ "transaction": {
+  "status": "open",
+  "transaction_id": "5041174441327473015"
+ },
+ "edit_design_url": "https://www.canva.com/d/x3jgsFIUi3qdlN-",
+ "richtexts": [
+  {
+   "page_index": 1,
+   "regions": [
+    {
+     "type": "character",
+     "text": "REPORTE\n"
+    },
+    {
+     "type": "character",
+     "text": "NOMBRE"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 355.3175729424327,
+     "left": 156.43733283124254
+    },
+    "dimension": {
+     "width": 229.34375,
+     "height": 98.17332999999999
+    }
+   },
+   "element_id": "PB22YHq1Gcyz3FSr-LBcf8j0QH417MlWb"
+  },
+  {
+   "page_index": 1,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Mes DD, AAAA "
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 489.66907130277514,
+     "left": 224.77034584055818
+    },
+    "dimension": {
+     "width": 92.67772398136871,
+     "height": 13.60715419255626
+    }
+   },
+   "element_id": "PB22YHq1Gcyz3FSr-LBf6cGwybtLG5wtD"
+  },
+  {
+   "page_index": 1,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Reporte Inicial\n"
+    },
+    {
+     "type": "character",
+     "text": "1er Ajuste"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 67.29090721380433,
+     "left": 42.46858283124243
+    },
+    "dimension": {
+     "width": 101.59375,
+     "height": 33.3333
+    }
+   },
+   "element_id": "PB22YHq1Gcyz3FSr-LBm54kmP93Z8bkzP"
+  },
+  {
+   "page_index": 1,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Esta es tu evaluaci\u00f3n inicial la cual te ayuda a visualizar tu estado actual. Despu\u00e9s de la Fase Intensiva y doce Ajustes Quiropr\u00e1cticos realizados por "
+    },
+    {
+     "type": "character",
+     "text": "DR\u2022QUIRO"
+    },
+    {
+     "type": "character",
+     "text": " haremos una comparaci\u00f3n para evaluar tu avance. "
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 668.4086579632477,
+     "left": 42.46858283124246
+    },
+    "dimension": {
+     "width": 375.4840027445309,
+     "height": 63.733334
+    }
+   },
+   "element_id": "PB22YHq1Gcyz3FSr-LBwwVls00NyKR0C6"
+  },
+  {
+   "page_index": 2,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBL1KRChXvbZLMLp-LBdd7kNZNDsXKDw5"
+  },
+  {
+   "page_index": 2,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 494.316740305586
+    },
+    "dimension": {
+     "width": 23.965577343750013,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBL1KRChXvbZLMLp-LB4XBfhflC06TBjJ"
+  },
+  {
+   "page_index": 2,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Resumen de tus Padecimientos en"
+    },
+    {
+     "type": "character",
+     "text": " "
+    },
+    {
+     "type": "character",
+     "text": "RECUPERACI\u00d3N"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 136.363661181159,
+     "left": 49.78158247356791
+    },
+    "dimension": {
+     "width": 453.65148839257387,
+     "height": 112.46667
+    }
+   },
+   "element_id": "PBL1KRChXvbZLMLp-LBQS1w1ZZg7kmm0r"
+  },
+  {
+   "page_index": 2,
+   "regions": [
+    {
+     "type": "character",
+     "text": "XXXX\n"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 309.25375166368474,
+     "left": 42.29373018158407
+    },
+    "dimension": {
+     "width": 461.1393406845576,
+     "height": 44.8
+    }
+   },
+   "element_id": "PBL1KRChXvbZLMLp-LB65D9DZHxjH4TzZ"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 167.19416766758636,
+     "left": 211.4353938714688
+    },
+    "dimension": {
+     "width": 142.1122948518451,
+     "height": 16.13109596811064
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBD5kx8V9270ycxk"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "V\u00e9rtebras"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 169.613350553946,
+     "left": 217.4773922866254
+    },
+    "dimension": {
+     "width": 59.21777526390945,
+     "height": 11.091984131332513
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBgVgZQf0fbVG0n9"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 268.8520358812328,
+     "left": 143.46608778530495
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBPVNHxsV4kC6JqR"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 276.7182565485777,
+     "left": 147.13306001940813
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBVFGvZFDYz5qWX6"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 284.406126079435,
+     "left": 148.42382855152482
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBxLzx5Xqnm6wNPP"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 307.2786382782999,
+     "left": 144.21403996118934
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBTJ5TRyYdlsP9cT"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 315.8209191292806,
+     "left": 141.2950199029706
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB0xb9X5PG1xr6kQ"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 326.44396650225326,
+     "left": 137.62804766886748
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBk4knzcrLjM57NL"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 334.0158350327206,
+     "left": 135.45697978653305
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBhz6t7V5cbN8bF5"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 344.56238264734066,
+     "left": 131.79000755242996
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBwXl68ScxfnFV2d"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 356.73147746581367,
+     "left": 126.79585973194615
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBTj2J0RW8MQ676N"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 366.61581793305356,
+     "left": 122.74700826884082
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBBzmkwFrbnL9bck"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 378.7710769848138,
+     "left": 117.91083392985944
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBrwFxwrC7R0JpD0"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 392.69794048455,
+     "left": 115.98639491945428
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBWZ8YdjQ8RVHt7W"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 407.87651567291374,
+     "left": 113.06737486123554
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB14cPmtcymJvRRK"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 422.45758627535577,
+     "left": 113.06737486123554
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBfPcL4dhFZxZZYB"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 437.0386568777977,
+     "left": 114.9918138716407
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBblgpHdkd1qrTQ0"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 452.3415395651364,
+     "left": 117.01244323984481
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBVfKrXYt9YmmZJS"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 467.64442225247535,
+     "left": 118.90541497767306
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBWdd38YwS55cLrm"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 486.2320071227608,
+     "left": 121.82443503589181
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBJltzXWdwgsgYZ4"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 505.15453569039585,
+     "left": 124.74345509411054
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB9hFJFrDxMt0Yfy"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 524.8876208209773,
+     "left": 129.61893967009556
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB36H8lkVjkLWYhZ"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 544.1788670190973,
+     "left": 133.61508228121244
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBBrRb7swRdq5Hp3"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 562.497445341682,
+     "left": 133.61508228121244
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBWHfWZtPJX40vsn"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 579.5191331635526,
+     "left": 128.87098749421116
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBn7cFsMbNQ1wLk7"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 593.5783223535105,
+     "left": 117.91083392985944
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBHnHd6Yn3Rd027M"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 604.2331739790937,
+     "left": 110.1483548030168
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBv3bTCqxbB0Hrxq"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 615.0578275519024,
+     "left": 104.31031468657928
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBfgJmtQGM96Gyck"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 629.6846500556054,
+     "left": 100.32911926299386
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBMQtrQRtSWjhPPP"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 644.5988908138157,
+     "left": 100.32911926299386
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBfYZGrhLyJptG9g"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 656.7658806712888,
+     "left": 114.06619365983771
+    },
+    "dimension": {
+     "width": 26.20121576551669,
+     "height": 26.57756453070352
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB8cBtZGK9Ntpgl7"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 300.3701204692294,
+     "left": 147.41154704751884
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBm5GTR74YhV5B6g"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 292.682250938372,
+     "left": 148.4238285515248
+    },
+    "dimension": {
+     "width": 5.838040116437502,
+     "height": 5.838040116437502
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB9Q5WsMCqLC2x5M"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "TALLO\nCEREBRAL"
+    }
+   ],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 239.60899990083692,
+     "left": 121.54730933812685
+    },
+    "dimension": {
+     "width": 29.973586002608645,
+     "height": 28.355037318909645
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBFSyKqSgRFpwRtS"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 159.6152397609565,
+     "left": 279.7711727441374
+    },
+    "dimension": {
+     "width": 227.66971109185315,
+     "height": 544.3574432019742
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBSb5MBxSPDcTcxg"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 685.5302770946812,
+     "left": 211.43539387146888
+    },
+    "dimension": {
+     "width": 202.8284309515999,
+     "height": 18.443070727278222
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBfqgS6yZgfCqMCW"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Suministro vascular a la cabeza, gl\u00e1ndula pituitaria, cuero cabelludo, huesos faciales, cerebro, o\u00eddo interno y medio, \nsistema nervioso simp\u00e1tico"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 185.45409210941818,
+     "left": 282.0897109441461
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 25.191121955573383
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB32f1wDxdq9KRQ2"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Ojos, nervios \u00f3pticos, nervios auditivos, \nsenos paranasales, huesos mastoides, \nlengua, frente"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 213.8261235058386,
+     "left": 282.0897109441461
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 18.653632993271554
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB9s8cfvFQwQXxcR"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Mejillas, o\u00eddo externo, huesos faciales, \ndientes, nervios trifaciales"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 236.2988937806363,
+     "left": 282.0897109087889
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.492820608370101
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBT30Nthp1VmSKVJ"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Nariz, labios, boca, trompa de Eustaquio."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 254.57926250508615,
+     "left": 282.0897109087889
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 5.2822060941833655
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBZPpJqGLSq5WZ5k"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Cuerdas vocales, gl\u00e1ndulas del cuello, faringe"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 270.33382366983017,
+     "left": 280.8778725828009
+    },
+    "dimension": {
+     "width": 111.11448699267257,
+     "height": 5.2822060941833655
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBWqZHD818sYhh2W"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "M\u00fasculos del cuello, hombros, am\u00edgdalas"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 286.24272149458085,
+     "left": 282.0897109087889
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 5.2822060941833655
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBkFPLQtV8qqPpV5"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Gl\u00e1ndula tiroides, bursas de los \nhombros, codos"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 299.7877395241183,
+     "left": 282.49154129739134
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 12.11614403096973
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBjn2byPkMNm6TMP"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Coraz\u00f3n, arterias coronarias"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 341.9196775159507,
+     "left": 280.39832023173517
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.544262262496305
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB0yxCL1V2PQL1Wt"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pulmones, bronquios, \ncavidad pleural, t\u00f3rax, pecho"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 356.0940848560425,
+     "left": 282.49154129739134
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 12.11614403096973
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB2kcDhBNxn2sPfw"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Ves\u00edcula biliar, conducto biliar com\u00fan"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 374.4920869105109,
+     "left": 282.0897109087889
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 5.578661606156866
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBK1s81v6THd9vMy"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "H\u00edgado, plexo cel\u00edaco, sangre"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 388.6589288933832,
+     "left": 282.6633486443714
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB95S6y3B72jmZMM"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Est\u00f3mago"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 407.172307420006,
+     "left": 282.49154129739134
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBJlZNPSvKrcmFnq"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "P\u00e1ncreas, intestino delgado"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 424.0507323717951,
+     "left": 281.8935938990445
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBgQtggxb6YJ9NHW"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Bazo"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 441.71166959760063,
+     "left": 282.49154129739134
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBTbb9jZ8RRTf9fd"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Gl\u00e1ndulas adrenales y suprarrenales"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 455.4342394587179,
+     "left": 282.30320012372744
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 5.578661606156866
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBxp6Ch4zW5tZrTT"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Ri\u00f1ones"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 468.00250665210115,
+     "left": 281.33546796776574
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBNyR0WBw41K9G8M"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Ri\u00f1ones, ur\u00e9teres"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 484.544534937925,
+     "left": 282.0897109087889
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB5XYQrgbcCWTHmt"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Intestino delgado, \ncirculaci\u00f3n linf\u00e1tica"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 497.71320824794765,
+     "left": 281.33546796776574
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 16.517428421954854
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB9FnJY2Kcx5y3Dl"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Intestino grueso, canal inguinal"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 527.3056145945062,
+     "left": 281.8935938990446
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.548544317766615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBt0tWXSXsc0qkR7"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Ap\u00e9ndice, abdomen, \nparte superior de las piernas"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 547.4663108457942,
+     "left": 279.99057590110425
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 16.517428421954854
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBqHkW4J7fC4316m"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Genitales, \u00fatero, vejiga, rodillas"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 580.1765140743139,
+     "left": 283.06517899890565
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBlTWkNhgXmn8vzM"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Gl\u00e1ndula prost\u00e1tica, m\u00fasculos de la zona lumbar, nervio ci\u00e1tico"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 602.0148747207487,
+     "left": 282.6633486443714
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 16.517428421954854
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBHJcw1CzFw4f6zg"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Piernas, tobillos, pies"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 630.4947016981921,
+     "left": 281.2484998746069
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBvr5Wnyz814DkPV"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Huesos de la cadera, gl\u00fateos"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 656.3882185019213,
+     "left": 280.8778725828009
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBMjHrsP5kWlNdLf"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Recto, ano"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 673.5649379165593,
+     "left": 279.70572662255495
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 7.62018204899826
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBJyQlQt2Fghws7G"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Dolores de cabeza, ansiedad, insomnio, resfriados, hipertensi\u00f3n, migra\u00f1as, malestar general, amnesia, fatiga, mareos."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 188.7422042949611,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 17.6397580263835
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBszJn0s8JnQ0j2n"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Problemas de sinusitis, alergias, trastornos visuales, sordera, problemas oculares, dolor de o\u00eddos, desmayos."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 213.8261235058386,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 17.6397580263835
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBzCC4Pwsm6WgFBC"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Neuralgia, neuritis, erupciones \ncut\u00e1neas, eczema."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 236.29889378063623,
+     "left": 396.16329787235605
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBDPt70VvTfqy9LB"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Fiebre del heno, inflamaci\u00f3n de membranas, p\u00e9rdida de audici\u00f3n, adenoides."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 251.48456811449253,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBf8rhfqRWb4n96D"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Laringitis, ronquera, afecciones de garganta: dolor de garganta, amigdalitis."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 266.7764247868986,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBmrlNhmHyQbQ7rM"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Cuello r\u00edgido, dolor en la parte superior del brazo, tos ferina, crup (tos perruna)."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 283.1596724705478,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBRS4QZDwdpdFnn4"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Bursitis, resfriados, afecciones tiroideas."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 302.67473478095417,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 5.260980464009116
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBYRQRPsrs1Hm8G9"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Estre\u00f1imiento, colitis, diarrea, algunas rupturas o hernias."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 525.5570912073997,
+     "left": 396.51022121541513
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBP3fFfCDZhY84V7"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Calambres, dificultad para respirar, acidosis, varices, problemas de circulaci\u00f3n, \ndolor u hormigueo en la ingle y \nla parte superior del muslo."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 543.1069839022738,
+     "left": 396.51022121541513
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 23.829146807570687
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBKQSv1ZqnjfYMvB"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Problemas de vejiga, problemas menstruales como periodos dolorosos o irregulares, impotencia, enuresis, dolor y/o entumecimiento de muslos."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 572.0653569348087,
+     "left": 396.5102212154151
+    },
+    "dimension": {
+     "width": 109.596443245777,
+     "height": 23.829146807570687
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBvcr5WFfXrfs0sV"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Lumbalgia y entumecimiento, \ntrastornos urinarios, debilidad en las extremidades inferiores."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 601.1337893523965,
+     "left": 396.19435985565906
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 17.639758026383504
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBDNMwvB6thTCBST"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Problemas de circulaci\u00f3n en las piernas, tobillos hinchados, pies fr\u00edos, debilidad en las piernas, calambres en las piernas, \nfascitis plantar."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 623.0220795816939,
+     "left": 396.19435985565894
+    },
+    "dimension": {
+     "width": 109.91230460553312,
+     "height": 23.829146807570687
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBfGwpLMhYppKDJD"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Condiciones sacroil\u00edacas, curvaturas de la columna vertebral, inestabilidad p\u00e9lvica."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 654.6846712632231,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB7kk7N8wgPWFDfP"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Hemorroides, picor rectal, dolor en el \ncoxis al sentarse."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 671.2294080739996,
+     "left": 395.7555535417253
+    },
+    "dimension": {
+     "width": 107.68055503447985,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB10Ss0y1h71skNX"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "\n"
+    }
+   ],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 184.19133006265366,
+     "left": 280.9165371433857
+    },
+    "dimension": {
+     "width": 225.5846499380293,
+     "height": 128.78005397206968
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB6pSfmP2NdbHgKk"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 316.8938774121044,
+     "left": 280.2808674996743
+    },
+    "dimension": {
+     "width": 225.54384805917886,
+     "height": 201.5164924028839
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBvms0DkHxjvxqkV"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 521.7743851756894,
+     "left": 280.52201452316285
+    },
+    "dimension": {
+     "width": 225.5846499380293,
+     "height": 126.90028687734807
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBSS79KCLJfyNRSx"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 652.4573780847477,
+     "left": 280.9165371433859
+    },
+    "dimension": {
+     "width": 225.54384805917886,
+     "height": 31.978124519057143
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBDBTGb5tDLx1BY2"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C6"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 284.81213026259263,
+     "left": 266.1382758972292
+    },
+    "dimension": {
+     "width": 10.59872606346324,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBdmD40N0Ykcdxsz"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 268.5263006694161,
+     "left": 266.3014727057342
+    },
+    "dimension": {
+     "width": 10.27233244645325,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBdc7ZJLWtlYDpmQ"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 237.1151501870397,
+     "left": 266.31280581743596
+    },
+    "dimension": {
+     "width": 10.249666223049779,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBXK1FXqNVYbbG8y"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 218.6702607600325,
+     "left": 266.319605684457
+    },
+    "dimension": {
+     "width": 10.236066489007696,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBcwb9tkX3VLSkPv"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 358.32758409586256,
+     "left": 266.757063796144
+    },
+    "dimension": {
+     "width": 9.361150265633698,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBYDrnz0mz2HYgSY"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 371.866878743905,
+     "left": 266.38080448764634
+    },
+    "dimension": {
+     "width": 10.11366888262895,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBY3mFk3WJ5ZlbjR"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T7"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 423.89058432715757,
+     "left": 266.64826592380734
+    },
+    "dimension": {
+     "width": 9.578746010307025,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB7C8b2KGWgbynk8"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T11"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 483.5963832107851,
+     "left": 266.0136116685101
+    },
+    "dimension": {
+     "width": 10.848054520901426,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBvVJFV97zLb0kX0"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 550.5729312585534,
+     "left": 266.81826259933337
+    },
+    "dimension": {
+     "width": 9.238752659254953,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB7Prmg274hTQVH6"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 605.5050423180826,
+     "left": 266.4352034238147
+    },
+    "dimension": {
+     "width": 10.004871010292288,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBQypKvgWx6N6Pck"
+  },
+  {
+   "page_index": 3,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 685.5302770946813,
+     "left": 393.70886211240037
+    },
+    "dimension": {
+     "width": 122.91708157298216,
+     "height": 21.054073524150986
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBVQ3p9pj8SML0YH"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBClCLChTyccwyyy"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 494.3045873758985
+    },
+    "dimension": {
+     "width": 23.977730273437512,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBx9KdknPblZntlp"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Tus "
+    },
+    {
+     "type": "character",
+     "text": "subluxaciOnes vertebrales"
+    },
+    {
+     "type": "character",
+     "text": " y sus efectos"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 60.40720264166339,
+     "left": 40.653098983324696
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 74.46667
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBGRZv5WhKQ1t4MF"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 306.2132636630673,
+     "left": 156.26013588909586
+    },
+    "dimension": {
+     "width": 7.183143274522988,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBlFNhXshPqvDq5w"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C6"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 313.69499962459855,
+     "left": 155.00308264595265
+    },
+    "dimension": {
+     "width": 7.412017937681809,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBbjPfGVZZ2HYcMy"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C7"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 322.52885595340143,
+     "left": 151.34284860974353
+    },
+    "dimension": {
+     "width": 7.32046807241828,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBGcrphd12DYMRDW"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 334.3101871695981,
+     "left": 147.31293051648294
+    },
+    "dimension": {
+     "width": 5.4648227264998415,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBlnlbtvTgy9K5Kc"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 345.12715010777094,
+     "left": 143.11748188334855
+    },
+    "dimension": {
+     "width": 6.535251920350325,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBHmW2dJ14t0vLg6"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 356.8551519839187,
+     "left": 138.02211221979945
+    },
+    "dimension": {
+     "width": 6.5458153663422705,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LByvNPpdydmJfDP0"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 368.5831538600665,
+     "left": 134.09281441022972
+    },
+    "dimension": {
+     "width": 7.070466517275568,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBn5VPpvkRVlXN7M"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 379.4975869304054,
+     "left": 130.6793648799333
+    },
+    "dimension": {
+     "width": 6.563421109662182,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB1crx33bkw178mz"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T6"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 391.3388586880077,
+     "left": 126.659973679998
+    },
+    "dimension": {
+     "width": 6.7887746241570195,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBZJt6bKJB31m0DW"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T7"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 404.5119854998576,
+     "left": 125.14764032881781
+    },
+    "dimension": {
+     "width": 6.697224758893492,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBmh98lPpt8QrjvY"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T8"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 418.6976207809628,
+     "left": 125.03848472023435
+    },
+    "dimension": {
+     "width": 6.915535976060366,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB38HDRFc7kLgmBF"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T9"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 431.58783821158045,
+     "left": 126.32049247808642
+    },
+    "dimension": {
+     "width": 6.7887746241570195,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB6vR2l35v1H2Jr8"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T10"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 445.957753242858,
+     "left": 126.659973679998
+    },
+    "dimension": {
+     "width": 9.137380783032919,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB22h5m36FC1XXc6"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T11"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 461.5522114080189,
+     "left": 130.16879832365592
+    },
+    "dimension": {
+     "width": 7.584554222216921,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB7R99F4GSgzg36b"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T12"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 478.33917323120056,
+     "left": 133.6946205117658
+    },
+    "dimension": {
+     "width": 8.654983416067404,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBtc1pHnVfvyhf3Z"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 494.09822779010585,
+     "left": 139.26186064895504
+    },
+    "dimension": {
+     "width": 5.387357455892241,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBCMKMjBjCkYym4F"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 514.7631373325353,
+     "left": 144.0857643833786
+    },
+    "dimension": {
+     "width": 6.457786649742726,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBqHrcYmGB6xqbzP"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 535.4280468749647,
+     "left": 147.30761541092198
+    },
+    "dimension": {
+     "width": 6.471871244398653,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBnYdK9W3jr0h69X"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 557.1070466928479,
+     "left": 149.2794920453168
+    },
+    "dimension": {
+     "width": 6.99652239533195,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB5kdZzVFpt5XsC3"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 576.081805776188,
+     "left": 146.76363132490178
+    },
+    "dimension": {
+     "width": 6.48595583905458,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB6ng0fqdNjGQcmC"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "S1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 593.5783223535107,
+     "left": 135.26505281590167
+    },
+    "dimension": {
+     "width": 5.57397833508328,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBFxPDWXhpmMJhwM"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 268.85203588123284,
+     "left": 153.23722976106743
+    },
+    "dimension": {
+     "width": 6.084544891360649,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB4mkbsQ9G6P9v4v"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C\u00d3CCIX"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 667.7252414395008,
+     "left": 117.35970986139665
+    },
+    "dimension": {
+     "width": 17.921565233379482,
+     "height": 4.658842994279508
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBgR7ClnLPd4Gm4q"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 278.27651048517544,
+     "left": 155.4335446551752
+    },
+    "dimension": {
+     "width": 7.776459994505633,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBzvmJ0sgYtFPv39"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 297.6172088495813,
+     "left": 156.27950220674774
+    },
+    "dimension": {
+     "width": 8.239938201249167,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBX6GRXHZMFPSt8L"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 289.4716554023312,
+     "left": 155.73173842573271
+    },
+    "dimension": {
+     "width": 8.239938201249167,
+     "height": 6.129615594259615
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB9QF6XK8xS7twQd"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "CERVICAL"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 268.67142491173695,
+     "left": 63.455185831902554
+    },
+    "dimension": {
+     "width": 5.298567540626976,
+     "height": 68.8412742249412
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBGMmqNQc4Cy85D3"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "tor\u00e1cica"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 380.6178732455405,
+     "left": 63.455185831902554
+    },
+    "dimension": {
+     "width": 5.298567540626976,
+     "height": 68.84088613468799
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBcGgNWh6c5RC5Sl"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "LUMBAR"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 510.42530787433407,
+     "left": 63.455185831902554
+    },
+    "dimension": {
+     "width": 5.298567540626976,
+     "height": 51.3018068647038
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBC4kc0q4znwF0Vm"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "SACRO"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 610.0712140955312,
+     "left": 53.12175690141683
+    },
+    "dimension": {
+     "width": 7.524646733083229,
+     "height": 42.532267229711714
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB4Vgh2668L3MDpn"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C\u00d3CCIX"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 608.7185808391141,
+     "left": 71.71662238317751
+    },
+    "dimension": {
+     "width": 3.824987904243575,
+     "height": 51.30180686470382
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBRhXWyVqt068W5y"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "&"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 630.6424299265944,
+     "left": 62.49623304891988
+    },
+    "dimension": {
+     "width": 7.524646733083229,
+     "height": 7.454108689743291
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBgRyH8yr6jhvjDC"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Cuando no hay interferencias, el sistema nervioso controla la funci\u00f3n saludable de pr\u00e1cticamente todas las c\u00e9lulas, tejidos, \u00f3rganos y sistemas del cuerpo."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 687.9576211795973,
+     "left": 397.59344500133966
+    },
+    "dimension": {
+     "width": 107.6805550344798,
+     "height": 13.806817126488529
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB0q3gQ0X54wp4lg"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "\u00d3RGANOS Y TEJIDOS "
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 689.3061724088238,
+     "left": 215.87105727808245
+    },
+    "dimension": {
+     "width": 110.74403977252203,
+     "height": 10.89128009899286
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBRxRSt3KZyNvRLV"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Extremidades superiores, desde los codos hacia abajo, incluidas manos, \nmu\u00f1ecas y dedos, es\u00f3fago y tr\u00e1quea"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 317.87450075644966,
+     "left": 282.0897109087889
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 18.653632993271554
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB7f1Lk8DXql5yZr"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Asma, tos, dificultad para respirar, falta de aire, dolor en las extremidades superiores."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 320.6884673787048,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBnGGnsfFftqbTjM"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Cardiopat\u00edas funcionales y ciertas \nafecciones tor\u00e1cicas."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 339.48300001345075,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBZ2vMQZP0lg8KNx"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Bronquitis, pleures\u00eda, neumon\u00eda,\ncongesti\u00f3n, gripa."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 355.8993876821499,
+     "left": 396.16329787235605
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBYNtC5Kb4My0WwV"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Afecciones de la ves\u00edcula biliar, \nictericia, herpes z\u00f3ster."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 371.47132838709985,
+     "left": 396.19435985565906
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBzqhNDRBD3wJSlB"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Asma, tos, dificultad para respirar, falta de aire, dolor en las extremidades superiores."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 386.24493934197085,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB8v9dxzkBkqM3bZ"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Afecciones estomacales - por ejemplo, s\u00edndrome del intestino irritable, \nindigesti\u00f3n, acidez/reflujo."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 401.0374503673354,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 17.639758026383504
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBXtMvnZKSnR5LG4"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "\u00dalceras, gastritis, s\u00edndrome del \nintestino irritable."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 422.26780376552534,
+     "left": 395.56581516874496
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBs2YSJMqt2Q2wJ9"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Resistencia disminuida, sistema \ninmunitario agotado."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 438.81039300195647,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBcT3ngdyr0v2X6V"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Reacciones al\u00e9rgicas, urticaria."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 455.43535744497655,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 5.260980464009116
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBjgnJWs3xHlZ2KG"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Problemas renales, endurecimiento de las arterias, fatiga cr\u00f3nica, nefritis, pielitis."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 465.77444299561193,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBctHNvJNtL7smYT"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Erupciones cut\u00e1neas como acn\u00e9, granos, eczema y/o for\u00fanculos."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 481.68579059130775,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 11.45036924519631
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBktsvdX6J8ZZdfv"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Reumatismo, dolores gaseosos, ciertos \ntipos de esterilidad, enfermedad \ninflamatoria articular."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 497.597138187004,
+     "left": 395.7555535417255
+    },
+    "dimension": {
+     "width": 110.5408492924471,
+     "height": 17.639758026383504
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB0MWVpGRP0FNbWm"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "EFECTOS"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 167.19416766758633,
+     "left": 428.5673662640834
+    },
+    "dimension": {
+     "width": 44.91722384773122,
+     "height": 10.90879999962273
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBDlN0SVPBJpNDZp"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "\u00c1REAS"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 167.19416766758633,
+     "left": 321.44804277302524
+    },
+    "dimension": {
+     "width": 33.20148404140495,
+     "height": 10.90879999962273
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBWfTGKdpYpC1G51"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "CUELLO"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 250.66755107037704,
+     "left": 233.1436208752545
+    },
+    "dimension": {
+     "width": 39.93600537769073,
+     "height": 10.90879999962273
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBb74BZDFH36PP5C"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "ESPALDA MEDIA"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 412.9701547140263,
+     "left": 211.569386231056
+    },
+    "dimension": {
+     "width": 84.15694861953367,
+     "height": 10.90879999962273
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBKKgHd8klL0l84D"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "ESPALDA BAJA"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 575.6913112684718,
+     "left": 214.1908467134089
+    },
+    "dimension": {
+     "width": 78.91402765482785,
+     "height": 10.90879999962273
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBp6jBQGB0tHWJpL"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 252.62607977031118,
+     "left": 265.9365465089383
+    },
+    "dimension": {
+     "width": 11.002184840045032,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBCxdcgt0B67yQW1"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 194.06743890410266,
+     "left": 267.0857240354943
+    },
+    "dimension": {
+     "width": 8.703829786933026,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB1gsbvwVhx3ydw8"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "C7"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 300.71112426587064,
+     "left": 266.2040079450993
+    },
+    "dimension": {
+     "width": 10.467261967723106,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBNDhQ0gTLkY2qHd"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 323.1008703160601,
+     "left": 267.52998201420235
+    },
+    "dimension": {
+     "width": 7.815313829516947,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBNJ8SMyhKpqRkKL"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T2"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 342.1900397444388,
+     "left": 266.763863663165
+    },
+    "dimension": {
+     "width": 9.347550531591617,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBHptlQsP8tchbcv"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 387.3818588473699,
+     "left": 266.74573068444226
+    },
+    "dimension": {
+     "width": 9.383816489037171,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBchK8cZHW71BmC6"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T6"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 406.079093797365,
+     "left": 266.58253387593726
+    },
+    "dimension": {
+     "width": 9.710210106047159,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBrQ9HyhzK3h1jWr"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T8"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 439.86295816943925,
+     "left": 266.4941356046637
+    },
+    "dimension": {
+     "width": 9.887006648594237,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LByPG53Zfmbc5dTr"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T9"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 453.58552803055665,
+     "left": 266.58253387593726
+    },
+    "dimension": {
+     "width": 9.710210106047159,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBngVhylPKtG3kLQ"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T10"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 467.02042595804414,
+     "left": 264.9052333440804
+    },
+    "dimension": {
+     "width": 13.064811169760933,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB1kRbRWcKwJx0Qv"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "T12"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 502.783491333887,
+     "left": 265.24975993981315
+    },
+    "dimension": {
+     "width": 12.375757978295399,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBBLbQB7c0bs2Rvf"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L1"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 528.1604492073716,
+     "left": 267.5843809503707
+    },
+    "dimension": {
+     "width": 7.706515957180285,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBh3tYCjbtNNTKg2"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L3"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 579.5379790513073,
+     "left": 266.8114627323123
+    },
+    "dimension": {
+     "width": 9.252352393297038,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBlJRmBPDlsgcH3k"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "L5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 630.494701698192,
+     "left": 266.80012962061056
+    },
+    "dimension": {
+     "width": 9.275018616700507,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB42HX2WtKTLcn9h"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "SACRO"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 656.348067362495,
+     "left": 243.5717163771265
+    },
+    "dimension": {
+     "width": 29.9886143735695,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBwW2WGWV5gWKCpK"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "c\u00f3ccix"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 672.505966649092,
+     "left": 242.68858858715924
+    },
+    "dimension": {
+     "width": 31.754869953504016,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBddlG9MNW7QvwQd"
+  },
+  {
+   "page_index": 3,
+   "regions": [
+    {
+     "type": "character",
+     "text": "PELVIS"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 657.2377884134079,
+     "left": 200.74634385262874
+    },
+    "dimension": {
+     "width": 29.9886143735695,
+     "height": 8.897252095011446
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBtjPqzyyFFsWyVj"
+  },
+  {
+   "page_index": 4,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBl3Cs9qPnQ79lnn"
+  },
+  {
+   "page_index": 4,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBH98JCbrpQQGCqn"
+  },
+  {
+   "page_index": 4,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBsd2JJf05Bkcf8H"
+  },
+  {
+   "page_index": 4,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBvhCC4rGDVttdld"
+  },
+  {
+   "page_index": 4,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBJhXkrw73S6FBLW"
+  },
+  {
+   "page_index": 4,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBphDmMvwn17yYlx"
+  },
+  {
+   "page_index": 4,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LB16Q0F3pDgnfQwb"
+  },
+  {
+   "page_index": 4,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 4"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 493.39311764933603
+    },
+    "dimension": {
+     "width": 24.889200000000013,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBCt5bKDPKwg80Fr"
+  },
+  {
+   "page_index": 4,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBTF7xTLk8HZghsw"
+  },
+  {
+   "page_index": 5,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LB1dNwwSChRwv5cq"
+  },
+  {
+   "page_index": 5,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LB5TgWm7jTPV38nq"
+  },
+  {
+   "page_index": 5,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LByZbLfrfmTSPqBn"
+  },
+  {
+   "page_index": 5,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBwS7GZ8mPr03RSL"
+  },
+  {
+   "page_index": 5,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBCSlr3Vhywh4MpX"
+  },
+  {
+   "page_index": 5,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBR9x3nLvD8wqklP"
+  },
+  {
+   "page_index": 5,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBf4yFZqW1yH0W8Y"
+  },
+  {
+   "page_index": 5,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 5"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 494.268128586836
+    },
+    "dimension": {
+     "width": 24.014189062500012,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBYMSTy5wjPmn0dH"
+  },
+  {
+   "page_index": 5,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBLXdtRRw8s1jNDj"
+  },
+  {
+   "page_index": 6,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LB8x2pHnpp2w750p"
+  },
+  {
+   "page_index": 6,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LB7Zm917B6ZdlSQ3"
+  },
+  {
+   "page_index": 6,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBvtw2K28vlgd4fS"
+  },
+  {
+   "page_index": 6,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LB2SJlJBynVh671T"
+  },
+  {
+   "page_index": 6,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBdFnkRmJHHBsWFt"
+  },
+  {
+   "page_index": 6,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBmXqB1nJ6pWyRfX"
+  },
+  {
+   "page_index": 6,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBsVSNT9xXzYW7z5"
+  },
+  {
+   "page_index": 6,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 6"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 493.879234836836
+    },
+    "dimension": {
+     "width": 24.403082812500013,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBgvhHSvZ6Fn88Kp"
+  },
+  {
+   "page_index": 6,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBbZ66GGFKPktSzH"
+  },
+  {
+   "page_index": 7,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBhBJTTFbQ631bFm"
+  },
+  {
+   "page_index": 7,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBhNXH7QGLjQd26t"
+  },
+  {
+   "page_index": 7,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBMn2WF1z7G5p9v0"
+  },
+  {
+   "page_index": 7,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LB6B0rdk1CLxDHfZ"
+  },
+  {
+   "page_index": 7,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBWlhdXZcNf6kKjS"
+  },
+  {
+   "page_index": 7,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBJqtpbrQR7rp38X"
+  },
+  {
+   "page_index": 7,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LB8TPvgHnWtmFckV"
+  },
+  {
+   "page_index": 7,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 7"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 494.0372229227735
+    },
+    "dimension": {
+     "width": 24.245094726562513,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBVBL33KdDj4bj9p"
+  },
+  {
+   "page_index": 7,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBlVvSJMClHtpvcs"
+  },
+  {
+   "page_index": 8,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LB6gZrVsgwJQN6P0"
+  },
+  {
+   "page_index": 8,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBvC2d43kjjDvwlV"
+  },
+  {
+   "page_index": 8,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBSGWv6B9FV3qhlG"
+  },
+  {
+   "page_index": 8,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBvxFcWyFwrwpX12"
+  },
+  {
+   "page_index": 8,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBGCbdrpfRtrhPtJ"
+  },
+  {
+   "page_index": 8,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBSNDvRwD4n1S9GY"
+  },
+  {
+   "page_index": 8,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBgm3nWRKQDtPMmm"
+  },
+  {
+   "page_index": 8,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 8"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 493.660482102461
+    },
+    "dimension": {
+     "width": 24.621835546875012,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBW3NdCT3YQ7WM3X"
+  },
+  {
+   "page_index": 8,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LB3rJT2RD3LlB3SQ"
+  },
+  {
+   "page_index": 9,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LB6ykxcPCf8GKlJ9"
+  },
+  {
+   "page_index": 9,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBfhfzmwJvPvfzVm"
+  },
+  {
+   "page_index": 9,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LB4NqKfRBkq8qJqt"
+  },
+  {
+   "page_index": 9,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 101.25878937578928,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBCzcCJsPQLSzx8L"
+  },
+  {
+   "page_index": 9,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBCJyK9PrtD8QGfx"
+  },
+  {
+   "page_index": 9,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBvwvwn32MrVR9Jq"
+  },
+  {
+   "page_index": 9,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBY0t28fR57lZ8yc"
+  },
+  {
+   "page_index": 9,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 9"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 493.879234836836
+    },
+    "dimension": {
+     "width": 24.403082812500013,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBJR4n428B498hJm"
+  },
+  {
+   "page_index": 9,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBBMHr3CtSQBGsZG"
+  },
+  {
+   "page_index": 10,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBrY9mwCxvc3d381"
+  },
+  {
+   "page_index": 10,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBtfywLdpW88sLRJ"
+  },
+  {
+   "page_index": 10,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 42.29373018158414
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBWdRdr01GcDLkCL"
+  },
+  {
+   "page_index": 10,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 109.13385826771658,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LB1lH8ZJDHS1YxqC"
+  },
+  {
+   "page_index": 10,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 313.08537192916634,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBHqS3QWbH57nlMn"
+  },
+  {
+   "page_index": 10,
+   "regions": [],
+   "containerElement": {
+    "type": "SHAPE",
+    "position": {
+     "top": 516.8963955512136,
+     "left": 312.00377328464936
+    },
+    "dimension": {
+     "width": 206.27854436468644,
+     "height": 167.81102362204726
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBRwm1CfJr2Jxlfc"
+  },
+  {
+   "page_index": 10,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 79.87816235370336
+    },
+    "dimension": {
+     "width": 138.84722167968758,
+     "height": 23.022510000000004
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBpnN8s4WHltqHmP"
+  },
+  {
+   "page_index": 10,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 10"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.763779527559,
+     "left": 489.8323092508985
+    },
+    "dimension": {
+     "width": 28.450008398437515,
+     "height": 10.577910000000001
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LB0pzNNfdP11SnSq"
+  },
+  {
+   "page_index": 10,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Antes - "
+    },
+    {
+     "type": "character",
+     "text": "reporte inicial"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 55.93700787401575,
+     "left": 51.64629234868215
+    },
+    "dimension": {
+     "width": 482.50167306521155,
+     "height": 36.46667
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBjBVdBPLnXbmprZ"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "dr.quiro.lemont@gmail.com \n3104908096"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.380299903457,
+     "left": 80.10291699601648
+    },
+    "dimension": {
+     "width": 138.6910380782481,
+     "height": 22.99661291338583
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBTMm0TwkH3WVBl8"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Pg. 11"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 737.3802999034568,
+     "left": 492.2665601776355
+    },
+    "dimension": {
+     "width": 25.74736908218505,
+     "height": 10.566011338582678
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBfFBBHd9dYlyD8q"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Tiempo promedio de "
+    },
+    {
+     "type": "character",
+     "text": "curaci\u00f3n del tejido"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 93.51513402412493,
+     "left": 49.37472748712764
+    },
+    "dimension": {
+     "width": 453.14119425489946,
+     "height": 74.468395
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBvdSkhwm8b1FSR8"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Tensi\u00f3n Del Tejido"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 247.31310966921293,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 25.408160000000002
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBbxWJdSb3Bkk8HQ-LBV67fvFGq7WCw53"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Tension aqu\u00ed"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 275.94174211015786,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 18.8081
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBbxWJdSb3Bkk8HQ-LBhwZ1DLwcV3mQGM"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Lesi\u00f3n del tend\u00f3n"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 315.9348371908575,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 25.408160000000002
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LB9wxQ8nX2vL2xtM-LBDb6K0c4nV3Swml"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Lesion aqu\u00ed"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 344.5634696318024,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 18.8081
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LB9wxQ8nX2vL2xtM-LBX8hhCnjvfmNR3T"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Lesi\u00f3n del ligamento"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 384.37156963180246,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 25.408160000000002
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBvcmWgjg6KhM0pc-LBzT81RvwSnvMl86"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Lesion aqu\u00ed"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 413.00020207274736,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 18.8081
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBvcmWgjg6KhM0pc-LBzX7PZ2fL4zhBLH"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "OTRAS Lesiones"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 452.8083020727472,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 25.408160000000002
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBz4Y2sSkXLrZfzw-LBQ7vmydQcsJ9zYg"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Lesion aqu\u00ed"
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 481.4369345136921,
+     "left": 49.37472748712753
+    },
+    "dimension": {
+     "width": 460.62062376590234,
+     "height": 18.8081
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBz4Y2sSkXLrZfzw-LB10TVFsgJqQmDwl"
+  },
+  {
+   "page_index": 11,
+   "regions": [
+    {
+     "type": "character",
+     "text": "Muchos tejidos siguen mostrando "
+    },
+    {
+     "type": "character",
+     "text": "se\u00f1ales de remodelaci\u00f3n hasta 1-2 a\u00f1os "
+    },
+    {
+     "type": "character",
+     "text": "despu\u00e9s de la lesi\u00f3n."
+    }
+   ],
+   "containerElement": {
+    "type": "TEXT",
+    "position": {
+     "top": 175.08706358570083,
+     "left": 49.374727487127615
+    },
+    "dimension": {
+     "width": 372.23698894195695,
+     "height": 36.008070000000004
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LBvsYWGsD5bzCKmF"
+  }
+ ],
+ "fills": [
+  {
+   "type": "image",
+   "asset_id": "MAGdf1nBZno",
+   "page_index": 1,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 322.32723795143806,
+     "left": -32.68340986331185
+    },
+    "dimension": {
+     "width": 624.7368984667812,
+     "height": 174.1454104476152
+    }
+   },
+   "element_id": "PB22YHq1Gcyz3FSr-LBxw5Tsy2XT1nxnX"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf7l-NEw",
+   "page_index": 1,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 716.4197063684667,
+     "left": 460.1810393416592
+    },
+    "dimension": {
+     "width": 56.40281827724139,
+     "height": 15.722285594781034
+    }
+   },
+   "element_id": "PB22YHq1Gcyz3FSr-LBMRRFh4TWfTmlGp"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 2,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBL1KRChXvbZLMLp-LBm2WPhj5hsC1dQ3"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 3,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBPpvybBCvV7xQsT"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdxdAtyJI",
+   "page_index": 3,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 159.61523976095657,
+     "left": 65.46517066474857
+    },
+    "dimension": {
+     "width": 170.26978756144968,
+     "height": 529.0946817380112
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBF2sWsFkdf7Ch3s"
+  },
+  {
+   "type": "image",
+   "asset_id": "MACYug7hCfE",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.76344519669485,
+     "left": 90.96557892554249
+    },
+    "dimension": {
+     "width": 122.51513806883739,
+     "height": 131.20764451816586
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBjnQwDlT7x2993h"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAExss3WVq0",
+   "page_index": 3,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 269.49637385225947,
+     "left": 93.52076702117391
+    },
+    "dimension": {
+     "width": 72.38822553798204,
+     "height": 399.38331331300435
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB42RwbZ0gtTtq8C"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 213.0879183547514,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LB0fXgjt2HPwJlH2"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 188.95798078732943,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBXrkQXfky0SJtHH"
+  },
+  {
+   "type": "image",
+   "asset_id": "MABkseNghYk",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 651.4863083734618,
+     "left": 237.73495822619822
+    },
+    "dimension": {
+     "width": 40.29204020517912,
+     "height": 19.743099700537766
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBrx6bn7GN0T3r8p"
+  },
+  {
+   "type": "image",
+   "asset_id": "MABkseNghYk",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 651.4863083734617,
+     "left": 194.44291802101912
+    },
+    "dimension": {
+     "width": 40.29204020517912,
+     "height": 19.743099700537766
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBQm7x6TJL7C4KHS"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 247.7112673114547,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBxPpcf7L3VSnN0b"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 318.25882663817004,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBPrVmNZM6fyxnyl"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 367.0110358320095,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBfPclVXW7jVyj5f"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 434.65264600871024,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBmhJSqhDC3hb7cQ"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAA9p2fSP7k",
+   "page_index": 3,
+   "editable": false,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 600.2612111817141,
+     "left": 261.87955476468187
+    },
+    "dimension": {
+     "width": 19.116168328557883,
+     "height": 19.116168328557883
+    }
+   },
+   "element_id": "PBRwtsCSD5LG4bcr-LBQc3J4RZ12W1dTS"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 4,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBpByt1L2Fmry27X"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 4,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LB03s0KDdVxZ96nw"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 4,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBZZtvWt8g5BCTtb"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 4,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PB0h8Y9wsQGjBmxL-LBM8m8Plr7Q5w18z"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 5,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBVrnkGPNHLv2t4F"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 5,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBWVXvXkC78RBqRg"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 5,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBY2Z1NNRxgpnCDf"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 5,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBLBvMzYn7b8x1XS-LBJp8wvdMDwTXWwd"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 6,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LB587yVdpdpTwhY9"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 6,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBTcswMhmkyfJHrw"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 6,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBzVXvrKbbq2m3P0"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 6,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PByS3V7c4X64PxkM-LBLxZPF2sTbSHQbv"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 7,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBJpVjsyV0gvSDC4"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 7,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBx1tkVHdNWQCR9p"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 7,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LBNqcmL2L6cvyYNG"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 7,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBLNYtg6XTkjCQT2-LB2HtC5x4cYvD6Wq"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 8,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBFyz8QV5vkZpwW8"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 8,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBrVkl7725B67XH9"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 8,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBDLhqlzyzQ3N2YN"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 8,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBTJMkWhwlKLCRxg-LBsDhFZKNRyZPB1C"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 9,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBN8ljXjmgkpZbHw"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 9,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBZr5Jr37Ts7Q2yc"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 9,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBjwKhc6S05Mfsck"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 9,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBg9YRv6SbjbfNP0-LBxQpS9kD24LhWNT"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 10,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 732.0617825716289,
+     "left": 42.29373018158415
+    },
+    "dimension": {
+     "width": 29.199754147603375,
+     "height": 32.30954815779073
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBHpS0RmKpb6C99B"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 10,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 182.0461767133827,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LB5yTgkrT4kmjGJc"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 10,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 385.85720033543,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBPhTX08cxYZW6NJ"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdfxDYbfI",
+   "page_index": 10,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 589.8087139968798,
+     "left": 270.910742150573
+    },
+    "dimension": {
+     "width": 21.98638673071497,
+     "height": 21.98638673071497
+    }
+   },
+   "element_id": "PBZB6JLz6MpGQ367-LBCg3JhtqtyLCN4c"
+  },
+  {
+   "type": "image",
+   "asset_id": "MAGdf1sfLcc",
+   "page_index": 11,
+   "editable": true,
+   "containerElement": {
+    "type": "RECT",
+    "position": {
+     "top": 731.6847168923591,
+     "left": 42.56076202544072
+    },
+    "dimension": {
+     "width": 29.166908529889536,
+     "height": 32.27320445907556
+    }
+   },
+   "element_id": "PByv0LkFyT0QNSpC-LB1t51QjV86vK74w"
+  }
+ ],
+ "pages": [
+  {
+   "page_id": "PB22YHq1Gcyz3FSr",
+   "page_number": 1,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBL1KRChXvbZLMLp",
+   "page_number": 2,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBRwtsCSD5LG4bcr",
+   "page_number": 3,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PB0h8Y9wsQGjBmxL",
+   "page_number": 4,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBLBvMzYn7b8x1XS",
+   "page_number": 5,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PByS3V7c4X64PxkM",
+   "page_number": 6,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBLNYtg6XTkjCQT2",
+   "page_number": 7,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBTJMkWhwlKLCRxg",
+   "page_number": 8,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBg9YRv6SbjbfNP0",
+   "page_number": 9,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PBZB6JLz6MpGQ367",
+   "page_number": 10,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  },
+  {
+   "page_id": "PByv0LkFyT0QNSpC",
+   "page_number": 11,
+   "dimension": {
+    "width": 559,
+    "height": 794
+   },
+   "is_responsive": false,
+   "is_empty": false,
+   "is_editable": true
+  }
+ ]
+}

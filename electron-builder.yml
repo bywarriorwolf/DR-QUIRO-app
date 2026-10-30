@@ -1,0 +1,73 @@
+# electron-builder configuration — DR·QUIRO Reportes
+appId: com.drquiro.reportes
+productName: DR·QUIRO Reportes
+executableName: DR-QUIRO-Reportes
+copyright: Copyright © 2026 DR·QUIRO
+directories:
+  output: release
+  buildResources: build
+# Native modules ship prebuilt N-API binaries (sharp, onnxruntime-node): no rebuild.
+npmRebuild: false
+nodeGypRebuild: false
+asar: true
+# Native code must live outside the asar archive.
+asarUnpack:
+  - "**/node_modules/sharp/**"
+  - "**/node_modules/@img/**"
+  - "**/node_modules/onnxruntime-node/**"
+  - "**/node_modules/onnxruntime-node-darwin-x64/**"
+  - "**/node_modules/onnxruntime-common/**"
+files:
+  - dist/**
+  - package.json
+  - "!**/*.map"
+  - "!**/node_modules/**/{README,CHANGELOG,HISTORY}*"
+  - "!**/node_modules/**/*.{md,ts,map}"
+  - "!**/node_modules/onnxruntime-node*/bin/**/*{cuda,tensorrt}*"
+# The background-removal model (downloaded with `npm run model`, never committed).
+extraResources:
+  - from: resources/models
+    to: models
+    filter: ["*.onnx"]
+# Removes the ORT / sharp binaries of other platforms & architectures.
+afterPack: scripts/after-pack.cjs
+
+win:
+  icon: build/icon.png
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  # Unsigned build (no certificate). See INSTALAR.md for the SmartScreen steps.
+  signAndEditExecutable: true
+nsis:
+  oneClick: false
+  perMachine: false            # per-user install, no admin rights needed
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: DR·QUIRO Reportes
+  deleteAppDataOnUninstall: false
+  artifactName: DR-QUIRO-Reportes-Setup-${version}.${ext}
+portable:
+  artifactName: DR-QUIRO-Reportes-Portable-${version}.${ext}
+
+mac:
+  icon: build/icon.png
+  category: public.app-category.medical
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  # Not signed / notarized (no Apple Developer account). See INSTALAR.md.
+  identity: null
+  hardenedRuntime: false
+  gatekeeperAssess: false
+dmg:
+  artifactName: DR-QUIRO-Reportes-${version}-${arch}.${ext}
+
+linux:
+  icon: build/icon.png
+  target: [dir]
+  category: Graphics
