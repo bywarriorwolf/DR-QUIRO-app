@@ -15,7 +15,7 @@ Tokens are never logged.
 1. **Upload first.** Every slot PNG is uploaded through `create-upload-url` (4 in parallel, with retries) and the app waits for its asset ID. Uploading before copying means a failed upload never leaves a half-made design.
 2. **Copy the template** with `copy-design`: `DAHZcKDyN90` (Inicial) or `DAHZcAKxsQg` (Comparativo). The originals are **never** opened for editing. `assertEditable` refuses any ID in `protectedDesignIds` (`DAHWWjbFWBs`, the real example, is also on that list).
 3. **Edit inside a transaction**: `start-editing-transaction` on the copy, then `perform-editing-operations` batches built by `ops.ts`:
-   - `find_and_replace_text` for the name and date placeholders on the cover (and the injury lines on page 11 in Inicial).
+   - `find_and_replace_text` for the name and date placeholders on the cover, and for the four injury lines on page 11 when the template has those placeholders. The Inicial template does. The Comparativo template's page 11 is a closing page without them, so it is left unchanged even though the form still requires the injury text.
    - `insert_fill` with each uploaded asset into the photo slots on pages 4–10 (3 rows per page, in the user's drag order).
    - `update_title` → `REPORTE INICIAL|COMPARATIVO Nombre Apellido - Fecha - A5`.
 4. `commit-editing-transaction`. On **any** error the transaction is cancelled with `cancel-editing-transaction`. The copy then stays in the user's Canva as an untouched duplicate of the template, because the Canva MCP has no delete tool. The log records its ID.

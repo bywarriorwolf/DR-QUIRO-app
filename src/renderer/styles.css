@@ -14,13 +14,21 @@ body,
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background: #fff;
+  background: transparent;
 }
 body {
   font-family: var(--c-font);
   color: var(--c-green);
   -webkit-font-smoothing: antialiased;
   user-select: none;
+}
+button,
+input,
+textarea,
+select,
+a,
+label {
+  -webkit-app-region: no-drag;
 }
 button,
 input {
@@ -43,6 +51,33 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+}
+/* Caption strip (mica / vibrancy shows through) plus the Figma card under it. */
+.shell {
+  width: 1440px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+.titlebar {
+  display: flex;
+  flex: none;
+  width: 100%;
+  height: var(--titlebar-height, 32px);
+  background: transparent;
+}
+.titlebar__drag {
+  flex: 1;
+  -webkit-app-region: drag;
+}
+/* Traffic lights sit in this strip; don't let the drag region cover them. */
+html[data-platform='darwin'] .titlebar::before {
+  content: '';
+  width: 80px;
+  flex: none;
+  -webkit-app-region: no-drag;
 }
 .app {
   position: relative;
@@ -255,6 +290,13 @@ button:disabled {
   height: 54px;
   object-fit: contain;
 }
+.modal__yoda {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background: transparent;
+  pointer-events: none;
+}
 .loader--small {
   width: 40px;
   height: 40px;
@@ -434,6 +476,10 @@ button:disabled {
 }
 .date-field:disabled {
   color: var(--c-disabled-text);
+  cursor: default;
+}
+.date-field:disabled .date-field__icon {
+  color: var(--c-disabled-text);
 }
 .date-field__icon {
   color: var(--c-placeholder);
@@ -482,12 +528,6 @@ button:disabled {
   color: var(--c-red);
   font-style: italic;
   font-size: 14px;
-}
-.injuries--disabled .injury__label {
-  color: var(--c-disabled-text);
-}
-.injuries--disabled .field--injury::placeholder {
-  color: var(--c-disabled-text);
 }
 .types {
   position: absolute;

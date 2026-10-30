@@ -37,11 +37,22 @@ describe('validateReport (spec rules)', () => {
     expect(r.missingInicialPhotos).toBe(true);
     expect(r.missingFinalPhotos).toBe(false);
   });
-  it('Comparativo: needs Fecha Final and Final photos, but not the injuries', () => {
-    const f = makeForm('comparativo', { fechaFinal: null, injuries: { tension: '', tendon: '', ligamento: '', otras: '' } });
+  it('Comparativo: every field is required, including the 4 injuries, Fecha Final and Final photos', () => {
+    const f = makeForm('comparativo', {
+      fechaFinal: null,
+      injuries: { tension: '', tendon: ' ', ligamento: '', otras: '' },
+    });
     const r = validateReport(f, { inicial: 3, final: 0 });
-    expect(r.fields).toEqual({ fechaFinal: true });
+    expect(r.ok).toBe(false);
+    expect(r.fields).toEqual({ fechaFinal: true, tension: true, tendon: true, ligamento: true, otras: true });
+    expect(r.missingInicialPhotos).toBe(false);
     expect(r.missingFinalPhotos).toBe(true);
+  });
+  it('Inicial does not require Fecha Final, even when it is empty or not a real date', () => {
+    expect(validateReport(makeForm('inicial', { fechaFinal: null }), { inicial: 1, final: 0 }).ok).toBe(true);
+    const invalid = validateReport(makeForm('inicial', { fechaFinal: { year: 2026, month: 2, day: 31 } }), { inicial: 1, final: 0 });
+    expect(invalid.ok).toBe(true);
+    expect(invalid.fields.fechaFinal).toBeUndefined();
   });
   it('more than 21 photos in a tab is invalid', () => {
     expect(validateReport(makeForm('inicial'), { inicial: 22, final: 0 }).ok).toBe(false);

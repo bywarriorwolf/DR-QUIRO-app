@@ -168,46 +168,51 @@ export function App() {
 
   return (
     <div className="stage">
-      <div className={`app${menuOpen ? ' app--menu' : ''}`}>
-        <Header
-          auth={auth}
-          connecting={connecting}
-          menuOpen={menuOpen}
-          onConnect={connect}
-          onToggleMenu={() => setMenuOpen((m) => !m)}
-          onDisconnect={disconnect}
-        />
-        <main className="content">
-          <PhotoPanel
-            tabs={tabs}
-            active={activeTab}
-            photos={photos[activeTab]}
-            tabErrors={tabErrors}
-            notice={notice[activeTab]}
-            importing={importing && importing.tab === activeTab ? importing : null}
-            onTab={setTab}
-            onDropFiles={onDropFiles}
-            onPick={onPick}
-            onReorder={(list) => setPhotos((s) => ({ ...s, [activeTab]: list }))}
-            onRemove={onRemove}
+      <div className="shell">
+        <div className="titlebar" aria-hidden="true">
+          <div className="titlebar__drag" />
+        </div>
+        <div className={`app${menuOpen ? ' app--menu' : ''}`}>
+          <Header
+            auth={auth}
+            connecting={connecting}
+            menuOpen={menuOpen}
+            onConnect={connect}
+            onToggleMenu={() => setMenuOpen((m) => !m)}
+            onDisconnect={disconnect}
           />
-          <ReportForm
-            form={form}
-            errors={errors}
-            hasErrors={submitted && !validation.ok}
-            onChange={(patch) => setForm((f) => ({ ...f, ...patch }))}
-            onInjury={(k: InjuryKey, v) => setForm((f) => ({ ...f, injuries: { ...f.injuries, [k]: v } }))}
-            onType={onType}
-            onCreate={create}
+          <main className="content">
+            <PhotoPanel
+              tabs={tabs}
+              active={activeTab}
+              photos={photos[activeTab]}
+              tabErrors={tabErrors}
+              notice={notice[activeTab]}
+              importing={importing && importing.tab === activeTab ? importing : null}
+              onTab={setTab}
+              onDropFiles={onDropFiles}
+              onPick={onPick}
+              onReorder={(list) => setPhotos((s) => ({ ...s, [activeTab]: list }))}
+              onRemove={onRemove}
+            />
+            <ReportForm
+              form={form}
+              errors={errors}
+              hasErrors={submitted && !validation.ok}
+              onChange={(patch) => setForm((f) => ({ ...f, ...patch }))}
+              onInjury={(k: InjuryKey, v) => setForm((f) => ({ ...f, injuries: { ...f.injuries, [k]: v } }))}
+              onType={onType}
+              onCreate={create}
+            />
+          </main>
+          {menuOpen && <div className="menu-dim" onClick={() => setMenuOpen(false)} />}
+          <Modal
+            state={modal}
+            onOpenDoc={(url) => void api.openReport(url)}
+            onRetry={create}
+            onClose={() => setModal(null)}
           />
-        </main>
-        {menuOpen && <div className="menu-dim" onClick={() => setMenuOpen(false)} />}
-        <Modal
-          state={modal}
-          onOpenDoc={(url) => void api.openReport(url)}
-          onRetry={create}
-          onClose={() => setModal(null)}
-        />
+        </div>
       </div>
     </div>
   );

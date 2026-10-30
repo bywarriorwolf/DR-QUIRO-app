@@ -32,7 +32,11 @@ export function fullName(form: Pick<ReportForm, 'nombre' | 'apellido'>): string 
   return cleanText(`${cleanText(form.nombre)} ${cleanText(form.apellido)}`);
 }
 
-/** Validation exactly as the spec: everything required; photos 1..21 per required tab. */
+/**
+ * Nombre, Apellidos, Fecha Inicial and the four injury fields are always required.
+ * Fecha Final is required only for Comparativo (Inicial leaves it disabled).
+ * Photos: 1..21 on each tab the report type uses.
+ */
 export function validateReport(
   form: ReportForm,
   photoCounts: { inicial: number; final: number },
@@ -44,9 +48,7 @@ export function validateReport(
   if (form.type === 'comparativo') {
     if (!form.fechaFinal || !isValidDate(form.fechaFinal)) fields.fechaFinal = true;
   }
-  if (form.type === 'inicial') {
-    for (const k of INJURY_KEYS) if (!cleanText(form.injuries[k] ?? '')) fields[k] = true;
-  }
+  for (const k of INJURY_KEYS) if (!cleanText(form.injuries[k] ?? '')) fields[k] = true;
   const missingInicialPhotos = photoCounts.inicial < PHOTOS.minPerTab;
   const missingFinalPhotos = form.type === 'comparativo' && photoCounts.final < PHOTOS.minPerTab;
   const tooMany = photoCounts.inicial > PHOTOS.maxPerTab || photoCounts.final > PHOTOS.maxPerTab;

@@ -2,7 +2,7 @@ import { CircleCheckBig, X } from 'lucide-react';
 import { useEffect } from 'react';
 import type { ErrorCode } from '../../shared/ipc';
 import { S } from '../../shared/strings';
-import loader from '../assets/loader.png';
+import yoda from '../assets/baby-yoda-waiting.gif';
 import { ProgressBar } from './ProgressBar';
 
 export type ModalState =
@@ -31,7 +31,7 @@ export function Modal({ state, onOpenDoc, onRetry, onClose }: Props) {
       <div className="modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
         {state.kind === 'progress' && (
           <>
-            <img className="loader" src={loader} alt="" draggable={false} />
+            <img className="modal__yoda" src={yoda} alt="" draggable={false} />
             <div className="modal__title">{S.creatingDocument}</div>
             <ProgressBar className="progress--modal" fraction={state.fraction} />
           </>

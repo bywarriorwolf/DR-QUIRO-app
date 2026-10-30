@@ -5,13 +5,14 @@ import '@fontsource/montserrat/latin-700.css';
 import './styles.css';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { THEME } from '../shared/theme';
+import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { App } from './App';
 
 // Theme colours (src/shared/theme.ts) -> CSS variables.
 for (const [k, v] of Object.entries(THEME)) {
   document.documentElement.style.setProperty(`--c-${k.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase())}`, v);
 }
+document.documentElement.style.setProperty('--titlebar-height', `${TITLE_BAR_HEIGHT}px`);
 // Dashed drop-zone outline as SVG (longer dashes than CSS 'dashed', like the Figma stroke).
 const dash = (color: string) =>
   `url("data:image/svg+xml,${encodeURIComponent(
