@@ -45,7 +45,10 @@ nsis:
   oneClick: false
   perMachine: false            # per-user install, no admin rights needed
   allowElevation: false
-  allowToChangeInstallationDirectory: true
+  # Same folder as the previous install. A newer Setup upgrades in place and
+  # keeps app data (the uninstaller is run with /KEEP_APP_DATA). Do not ask for
+  # a new directory, or the user ends up with a second copy.
+  allowToChangeInstallationDirectory: false
   createDesktopShortcut: always
   createStartMenuShortcut: true
   shortcutName: DR·QUIRO Reportes
@@ -53,6 +56,9 @@ nsis:
   artifactName: DR-QUIRO-Reportes-Setup-${version}.${ext}
 portable:
   artifactName: DR-QUIRO-Reportes-Portable-${version}.${ext}
+  # Stable short temp folder. A random deep NSIS path can fail to launch.
+  unpackDirName: DR-QUIRO-Reportes
+  requestExecutionLevel: user
 
 mac:
   icon: build/icon.png

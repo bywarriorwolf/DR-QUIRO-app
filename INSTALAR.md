@@ -4,8 +4,8 @@
 
 Hay dos opciones; use la que prefiera:
 
-- **Instalador:** `DR-QUIRO-Reportes-Setup-x.y.z.exe`. Se instala solo para su usuario (no pide permisos de administrador) y crea accesos directos en el Escritorio y en el menú Inicio.
-- **Portable:** `DR-QUIRO-Reportes-Portable-x.y.z.exe`. No se instala: haga doble clic y la aplicación se abre. Puede guardarlo en cualquier carpeta o en una memoria USB.
+- **Instalador:** `DR-QUIRO-Reportes-Setup-x.y.z.exe`. Se instala solo para su usuario (no pide permisos de administrador) y crea accesos directos en el Escritorio y en el menú Inicio. Si ya tiene una versión instalada, ejecute el Setup nuevo: actualiza esa instalación en la misma carpeta y conserva los datos. No hace falta desinstalar.
+- **Portable:** `DR-QUIRO-Reportes-Portable-x.y.z.exe`. No se instala: haga doble clic y la aplicación se abre. Puede guardarlo en cualquier carpeta o en una memoria USB. Para actualizarlo, cierre la aplicación y reemplace el archivo.
 
 La aplicación no está firmada digitalmente, por eso Windows puede mostrar el aviso **"Windows protegió su PC"** (SmartScreen):
 
