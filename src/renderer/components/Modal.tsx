@@ -8,7 +8,7 @@ import { ProgressBar } from './ProgressBar';
 export type ModalState =
   | { kind: 'progress'; fraction: number }
   | { kind: 'done'; url: string }
-  | { kind: 'error'; code: ErrorCode }
+  | { kind: 'error'; code: ErrorCode; detail?: string }
   | null;
 
 interface Props {
@@ -52,6 +52,7 @@ export function Modal({ state, onOpenDoc, onRetry, onClose }: Props) {
             </button>
             <div className="modal__title modal__title--error">{S.errorTitle}</div>
             <div className="modal__body">{S.errors[state.code]}</div>
+            {state.detail && <div className="modal__detail">{state.detail}</div>}
             <button type="button" className="pill-button" onClick={onRetry} autoFocus>
               {S.retry}
             </button>

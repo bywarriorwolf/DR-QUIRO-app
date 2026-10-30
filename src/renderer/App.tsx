@@ -161,7 +161,7 @@ export function App() {
     });
     if (res.ok) setModal({ kind: 'done', url: res.editUrl });
     else {
-      setModal({ kind: 'error', code: res.code });
+      setModal({ kind: 'error', code: res.code, detail: res.message });
       if (res.code === 'notConnected') setAuth(await api.authStatus());
     }
   }, [validation, auth.connected, form, photos]);

@@ -74,6 +74,7 @@ export interface CoverElements {
   nameId: string;
   dateId: string;
   datePlaceholder: string;
+  dateText: string;
 }
 
 export function findCover(state: EditingState, type: ReportType): CoverElements {
@@ -84,7 +85,13 @@ export function findCover(state: EditingState, type: ReportType): CoverElements 
   const dates = onCover.filter((r) => textOf(r).trim() === datePlaceholder);
   if (names.length !== 1) throw new TemplateError(`Portada: se esperaba 1 texto "${TEMPLATE.placeholders.name}", hay ${names.length}`);
   if (dates.length !== 1) throw new TemplateError(`Portada: se esperaba 1 texto "${datePlaceholder}", hay ${dates.length}`);
-  return { nameId: names[0].element_id, dateId: dates[0].element_id, datePlaceholder };
+  return {
+    nameId: names[0].element_id,
+    dateId: dates[0].element_id,
+    datePlaceholder,
+    /** Exact cover text, including trailing spaces Canva stored on the placeholder. */
+    dateText: textOf(dates[0]),
+  };
 }
 
 /**
@@ -96,7 +103,7 @@ export function findInjuryFields(state: EditingState): { id: string; text: strin
   const found = state.richtexts
     .filter((r) => r.page_index === TEMPLATE.injuryPage && TEMPLATE.placeholders.injury.test(textOf(r)))
     .sort((a, b) => a.containerElement.position.top - b.containerElement.position.top)
-    .map((r) => ({ id: r.element_id, text: textOf(r).trim() }));
+    .map((r) => ({ id: r.element_id, text: textOf(r) }));
   if (found.length === 0) return null;
   if (found.length !== INJURY_KEYS.length) {
     throw new TemplateError(`Página ${TEMPLATE.injuryPage}: se esperaban ${INJURY_KEYS.length} lesiones, hay ${found.length}`);
@@ -133,7 +140,7 @@ export function buildEditBatches(state: EditingState, input: BuildInput): EditBa
     pageIndex: TEMPLATE.coverPage,
     operations: [
       { type: 'find_and_replace_text', element_id: cover.nameId, find_text: TEMPLATE.placeholders.name, replace_text: coverName(form) },
-      { type: 'find_and_replace_text', element_id: cover.dateId, find_text: cover.datePlaceholder, replace_text: coverDate(form) },
+      { type: 'find_and_replace_text', element_id: cover.dateId, find_text: cover.dateText, replace_text: coverDate(form) },
       { type: 'update_title', title: buildTitle(form) },
     ],
   });
