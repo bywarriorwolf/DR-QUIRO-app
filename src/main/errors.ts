@@ -27,3 +27,15 @@ export function errorCode(e: unknown): ErrorCode {
   }
   return 'unknown';
 }
+
+/** Short, secret-free text for the error modal. */
+export function publicErrorDetail(e: unknown): string | undefined {
+  const raw = e instanceof Error ? e.message : String(e ?? '');
+  const clean = raw
+    .replace(/(access_token|refresh_token|code|_sat)=[^&\s]+/gi, '$1=***')
+    .replace(/https?:\/\/\S+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 280);
+  return clean || undefined;
+}

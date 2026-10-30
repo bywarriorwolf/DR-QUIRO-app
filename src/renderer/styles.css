@@ -14,7 +14,7 @@ body,
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background: transparent;
+  background: #fff;
 }
 body {
   font-family: var(--c-font);
@@ -51,22 +51,23 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: #fff;
 }
-/* Caption strip (mica / vibrancy shows through) plus the Figma card under it. */
+/* Caption strip plus the Figma card under it. The strip is opaque white so the
+   window cannot open as an empty transparent frame. */
 .shell {
   width: 1440px;
   flex: none;
   display: flex;
   flex-direction: column;
-  background: transparent;
+  background: #fff;
 }
 .titlebar {
   display: flex;
   flex: none;
   width: 100%;
   height: var(--titlebar-height, 32px);
-  background: transparent;
+  background: #fff;
 }
 .titlebar__drag {
   flex: 1;
@@ -753,6 +754,15 @@ html[data-platform='darwin'] .titlebar::before {
   color: #606060;
   margin-bottom: 12px;
   max-width: 440px;
+}
+.modal__detail {
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a8a8a;
+  margin-top: -6px;
+  margin-bottom: 12px;
+  max-width: 440px;
+  word-break: break-word;
 }
 .modal__check {
   color: var(--c-green);
