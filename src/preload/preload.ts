@@ -7,7 +7,13 @@ import { IPC } from '../shared/channels';
 import type { DrQuiroApi } from '../shared/ipc';
 
 // Lets the caption CSS leave the macOS traffic lights clickable.
-document.documentElement.dataset.platform = process.platform;
+// Sandboxed preloads can run before the document element exists (Linux).
+const markPlatform = () => {
+  const root = document.documentElement;
+  if (root) root.dataset.platform = process.platform;
+};
+markPlatform();
+document.addEventListener('DOMContentLoaded', markPlatform);
 
 function subscribe<T>(channel: string, cb: (v: T) => void): () => void {
   const listener = (_e: unknown, v: T) => cb(v);
