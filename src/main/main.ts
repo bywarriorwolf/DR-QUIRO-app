@@ -3,9 +3,10 @@
  * Every IPC payload is validated with zod (src/shared/ipc.ts) and every
  * handler checks that the sender is our own page.
  */
-import { app, BrowserWindow, dialog, ipcMain, safeStorage, screen, session, shell, type IpcMainInvokeEvent } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, safeStorage, screen, session, shell, type BrowserWindowConstructorOptions, type IpcMainInvokeEvent } from 'electron';
 import { existsSync } from 'node:fs';
 import { promises as fs } from 'node:fs';
+import { release } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MODEL } from '../shared/config';
@@ -19,6 +20,7 @@ import {
   type CreateReportResult,
   type ProgressEvent,
 } from '../shared/ipc';
+import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { McpCanvaSession, MockCanvaSession, type CanvaSession } from './canva/connection';
 import { runReport } from './canva/runner';
 import { EncryptedFileSecretStore } from './canva/secretStore';
@@ -31,7 +33,10 @@ import { PhotoStore } from './photos/store';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEV_URL = process.env.VITE_DEV_SERVER_URL; // set by scripts/dev.mjs only
 const MOCK = process.env.DRQUIRO_MOCK_CANVA === '1';
-const DESIGN = { width: 1440, height: 1024 }; // Figma frame size; the UI is zoomed to fit
+const DESIGN = { width: 1440, height: 1024 }; // Figma card; the UI is zoomed to fit
+/** Card plus the translucent caption strip above it. */
+const SHELL = { width: DESIGN.width, height: DESIGN.height + TITLE_BAR_HEIGHT };
+const OVERLAY_COLOR = '#00000000'; // RRGGBBAA, fully transparent so mica/vibrancy shows through
 
 if (process.env.DRQUIRO_USER_DATA) app.setPath('userData', path.resolve(process.env.DRQUIRO_USER_DATA));
 
@@ -200,25 +205,82 @@ async function saveMockOutput(pngs: { inicial: Buffer[]; final: Buffer[] }): Pro
   return dir;
 }
 
+/** Mica on Windows 11 22H2+; acrylic on earlier Windows where mica is unavailable. */
+function windowsBackgroundMaterial(): 'mica' | 'acrylic' {
+  const build = Number(release().split('.')[2] ?? 0);
+  return build >= 22621 ? 'mica' : 'acrylic';
+}
+
+function overlayHeight(zoom: number): number {
+  return Math.max(1, Math.round(TITLE_BAR_HEIGHT * zoom));
+}
+
 function fitZoom() {
   if (!win) return;
   const [w, h] = win.getContentSize();
-  win.webContents.setZoomFactor(Math.max(0.4, Math.min(w / DESIGN.width, h / DESIGN.height)));
+  const zoom = Math.max(0.4, Math.min(w / SHELL.width, h / SHELL.height));
+  win.webContents.setZoomFactor(zoom);
+  // Keep the native caption buttons the same height as the CSS drag strip.
+  if (process.platform === 'win32' || process.platform === 'linux') {
+    win.setTitleBarOverlay({ color: OVERLAY_COLOR, symbolColor: THEME.green, height: overlayHeight(zoom) });
+  } else if (process.platform === 'darwin') {
+    const bar = TITLE_BAR_HEIGHT * zoom;
+    win.setWindowButtonPosition({ x: Math.round(14 * zoom), y: Math.max(0, Math.round((bar - 14) / 2)) });
+  }
+}
+
+function windowChrome(zoom: number): BrowserWindowConstructorOptions {
+  const overlay = { color: OVERLAY_COLOR, symbolColor: THEME.green, height: overlayHeight(zoom) };
+  if (process.platform === 'darwin') {
+    return {
+      titleBarStyle: 'hiddenInset',
+      vibrancy: 'under-window',
+      visualEffectState: 'active',
+      transparent: true,
+      backgroundColor: '#00000000',
+      trafficLightPosition: { x: Math.round(14 * zoom), y: Math.max(0, Math.round((TITLE_BAR_HEIGHT * zoom - 14) / 2)) },
+    };
+  }
+  if (process.platform === 'win32') {
+    // `titleBarStyle: 'hidden'` drops the default caption and, on Windows, the
+    // frame — that is what lets mica/acrylic extend into the client area.
+    // `transparent: true` is reserved for older Windows: on 11 it also strips
+    // the thick frame, so the window could not be resized or keep rounded
+    // corners. A transparent background colour lets the material show through
+    // the caption strip; the card below paints its own white background.
+    // Minimize / maximize / close stay on the overlay.
+    const material = windowsBackgroundMaterial();
+    return {
+      titleBarStyle: 'hidden',
+      titleBarOverlay: overlay,
+      backgroundMaterial: material,
+      backgroundColor: '#00000000',
+      ...(material === 'mica' ? { thickFrame: true, roundedCorners: true } : { transparent: true }),
+    };
+  }
+  return {
+    titleBarStyle: 'hidden',
+    titleBarOverlay: overlay,
+    transparent: true,
+    backgroundColor: '#00000000',
+  };
 }
 
 function createWindow() {
   const area = screen.getPrimaryDisplay().workAreaSize;
-  const scale = Math.min(1, (area.width * 0.92) / DESIGN.width, (area.height * 0.92) / DESIGN.height);
+  const scale = Math.min(1, (area.width * 0.92) / SHELL.width, (area.height * 0.92) / SHELL.height);
   win = new BrowserWindow({
-    width: Math.round(DESIGN.width * scale),
-    height: Math.round(DESIGN.height * scale),
+    width: Math.round(SHELL.width * scale),
+    height: Math.round(SHELL.height * scale),
     minWidth: 900,
-    minHeight: 640,
+    minHeight: 640 + TITLE_BAR_HEIGHT,
     useContentSize: true,
     show: false,
-    backgroundColor: '#ffffff',
     title: 'DR·QUIRO Reportes',
     autoHideMenuBar: true,
+    roundedCorners: true,
+    thickFrame: true,
+    ...windowChrome(scale),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true,

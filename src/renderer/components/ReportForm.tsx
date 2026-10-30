@@ -1,5 +1,5 @@
 import { Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReportType } from '../../shared/config';
 import { formatFieldDate, type DateParts } from '../../shared/dates';
 import { INJURY_KEYS, type FieldKey, type InjuryKey, type ReportForm as Form } from '../../shared/report';
@@ -43,7 +43,11 @@ function DateField(props: {
 
 export function ReportForm({ form, errors, hasErrors, onChange, onInjury, onType, onCreate }: Props) {
   const [picker, setPicker] = useState<'fechaInicial' | 'fechaFinal' | null>(null);
-  const comparativo = form.type === 'comparativo';
+  const inicial = form.type === 'inicial';
+  // Fecha Final is the only field that is ever disabled, and only for Reporte Inicial.
+  useEffect(() => {
+    if (inicial) setPicker((p) => (p === 'fechaFinal' ? null : p));
+  }, [inicial]);
   const text = (key: 'nombre' | 'apellido', placeholder: string) => (
     <input
       className={`field field--text${errors[key] ? ' field--error' : ''}`}
@@ -73,10 +77,10 @@ export function ReportForm({ form, errors, hasErrors, onChange, onInjury, onType
           onOpen={() => setPicker(picker === 'fechaInicial' ? null : 'fechaInicial')}
         />
         <DateField
-          value={comparativo ? form.fechaFinal : null}
+          value={form.fechaFinal}
           placeholder={S.fechaFinal}
-          error={comparativo && !!errors.fechaFinal}
-          disabled={!comparativo}
+          error={!inicial && !!errors.fechaFinal}
+          disabled={inicial}
           open={picker === 'fechaFinal'}
           onOpen={() => setPicker(picker === 'fechaFinal' ? null : 'fechaFinal')}
         />
@@ -90,15 +94,14 @@ export function ReportForm({ form, errors, hasErrors, onChange, onInjury, onType
         )}
       </div>
       <div className="divider" />
-      <div className={`injuries${comparativo ? ' injuries--disabled' : ''}`}>
+      <div className="injuries">
         {INJURY_KEYS.map((k) => (
           <label key={k} className="injury">
             <span className="injury__label">{S.injuries[k]}</span>
             <input
               className={`field field--injury${errors[k] ? ' field--error' : ''}`}
-              value={comparativo ? '' : form.injuries[k]}
+              value={form.injuries[k]}
               maxLength={MAX_LEN}
-              disabled={comparativo}
               placeholder={errors[k] ? S.requiredField : S.injuryPlaceholder}
               onChange={(e) => onInjury(k, e.target.value)}
               aria-invalid={!!errors[k]}

@@ -1,4 +1,7 @@
 /** Colours and sizes taken from the Figma file. Exposed to CSS as variables. */
+/** Caption strip above the card. Native overlay height tracks this at the current zoom. */
+export const TITLE_BAR_HEIGHT = 32;
+
 export const THEME = {
   green: '#708572', // primary sage green (buttons, labels, active tab)
   greenFrame: 'rgba(87, 196, 97, 0.4)', // inner frame line

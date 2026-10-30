@@ -65,7 +65,7 @@ export const TEMPLATE = {
     name: 'NOMBRE',
     dateInicial: 'Mes DD, AAAA',
     dateComparativo: 'Mes DD, AAAA - Mes DD, AAAA',
-    /** Page 11 (Inicial only), matched by this regex and ordered by top. */
+    /** Page 11 injury lines, matched by this regex and ordered by top. Absent on Comparativo. */
     injury: /aqu[ií]\s*$/i,
   },
 } as const;

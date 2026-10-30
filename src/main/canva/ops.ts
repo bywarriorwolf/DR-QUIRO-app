@@ -87,12 +87,17 @@ export function findCover(state: EditingState, type: ReportType): CoverElements 
   return { nameId: names[0].element_id, dateId: dates[0].element_id, datePlaceholder };
 }
 
-/** Inicial page 11 placeholders ordered top -> bottom (= INJURY_KEYS order). */
-export function findInjuryFields(state: EditingState): { id: string; text: string }[] {
+/**
+ * Page 11 injury placeholders, top -> bottom (= INJURY_KEYS order).
+ * Null when this template has none (the Comparativo closing page). A partial
+ * set is a broken template and still throws.
+ */
+export function findInjuryFields(state: EditingState): { id: string; text: string }[] | null {
   const found = state.richtexts
     .filter((r) => r.page_index === TEMPLATE.injuryPage && TEMPLATE.placeholders.injury.test(textOf(r)))
     .sort((a, b) => a.containerElement.position.top - b.containerElement.position.top)
     .map((r) => ({ id: r.element_id, text: textOf(r).trim() }));
+  if (found.length === 0) return null;
   if (found.length !== INJURY_KEYS.length) {
     throw new TemplateError(`Página ${TEMPLATE.injuryPage}: se esperaban ${INJURY_KEYS.length} lesiones, hay ${found.length}`);
   }
@@ -168,9 +173,11 @@ export function buildEditBatches(state: EditingState, input: BuildInput): EditBa
     batches.push({ pageIndex: page, operations: perPage.get(page)! });
   }
 
-  // Injuries (Inicial page 11 only; Comparativo page 11 is never touched).
-  if (type === 'inicial') {
-    const fields = findInjuryFields(state);
+  // Injuries on whichever template actually has the four placeholders.
+  // Both report types require them in the form; Comparativo's page 11 does not,
+  // so that closing page is left untouched.
+  const fields = findInjuryFields(state);
+  if (fields) {
     batches.push({
       pageIndex: TEMPLATE.injuryPage,
       operations: INJURY_KEYS.map((k, i) => ({

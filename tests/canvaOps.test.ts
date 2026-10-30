@@ -50,7 +50,10 @@ describe('cover and injuries', () => {
   });
   it('Inicial page 11 has 4 placeholders in top order', () => {
     const f = findInjuryFields(INI);
-    expect(f.map((x) => x.text)).toEqual(['Tension aquí', 'Lesion aquí', 'Lesion aquí', 'Lesion aquí']);
+    expect(f?.map((x) => x.text)).toEqual(['Tension aquí', 'Lesion aquí', 'Lesion aquí', 'Lesion aquí']);
+  });
+  it('Comparativo page 11 has no injury placeholders', () => {
+    expect(findInjuryFields(COMP)).toBeNull();
   });
 });
 
@@ -79,7 +82,7 @@ describe('buildEditBatches', () => {
     ]);
   });
 
-  it('Comparativo: Final n sits beside Inicial n, page 11 and "(XXXX ajustes)" untouched', () => {
+  it('Comparativo: Final n sits beside Inicial n; page 11 is untouched because it has no injury lines', () => {
     const form = makeForm('comparativo');
     const ini = Array.from({ length: 5 }, (_, i) => `MAi${i}`);
     const fin = Array.from({ length: 5 }, (_, i) => `MAf${i}`);
