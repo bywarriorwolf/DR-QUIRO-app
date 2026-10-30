@@ -1,7 +1,7 @@
 # electron-builder configuration — DR·QUIRO Reportes
-appId: com.drquiro.reportes
-productName: DR·QUIRO Reportes
-executableName: DR-QUIRO-Reportes
+appId: com.drquiro.reportes.test
+productName: DR·QUIRO Reportes TEST
+executableName: DR-QUIRO-Reportes-TEST
 copyright: Copyright © 2026 DR·QUIRO
 directories:
   output: release
@@ -49,9 +49,9 @@ nsis:
   allowToChangeInstallationDirectory: false
   createDesktopShortcut: always
   createStartMenuShortcut: true
-  shortcutName: DR·QUIRO Reportes
+  shortcutName: DR·QUIRO Reportes TEST
   deleteAppDataOnUninstall: false
-  artifactName: DR-QUIRO-Reportes-Setup-${version}.${ext}
+  artifactName: DR-QUIRO-Reportes-TEST-1.1.0-test1-Setup.${ext}
 
 mac:
   icon: build/icon.png

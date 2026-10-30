@@ -123,7 +123,13 @@ export const LAYOUT = {
   maxUploadBytes: 2 * 1024 * 1024,
 } as const;
 
-/** Background-removal model (rembg "isnet-general-use", Apache-2.0). */
+/**
+ * Background-removal model. This test build keeps rembg isnet-general-use
+ * (Apache-2.0, ~171 MB, ~0.7 s/image on CPU). BiRefNet-lite (MIT, ZhengPeng7)
+ * was measured and not shipped: the FP32 ONNX is 214 MB and ~9 s/image, and
+ * the 110 MB FP16 file is ~28 s/image because this ONNX Runtime build has no
+ * CPU kernels for its float16 ops. RMBG-2.0 was skipped (non-commercial).
+ */
 export const MODEL = {
   fileName: 'isnet-general-use.onnx',
   url: 'https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-general-use.onnx',

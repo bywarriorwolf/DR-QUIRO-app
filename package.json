@@ -1,8 +1,8 @@
 {
   "name": "dr-quiro-reportes",
-  "productName": "DR·QUIRO Reportes",
-  "version": "1.0.3",
-  "description": "DR·QUIRO Reportes – genera reportes de pacientes en Canva",
+  "productName": "DR·QUIRO Reportes TEST",
+  "version": "1.1.0-test1",
+  "description": "DR·QUIRO Reportes TEST – recorte de prueba, no sustituye la 1.0.3",
   "author": "Brian Pulgarin",
   "license": "UNLICENSED",
   "private": true,

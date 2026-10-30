@@ -140,6 +140,8 @@ function registerIpc() {
     try {
       const inicial = req.inicial.map((id) => photos.pathOf(id));
       const final = req.form.type === 'comparativo' ? req.final.map((id) => photos.pathOf(id)) : [];
+      const choiceFor = (id: string) =>
+        req.useOriginal?.includes(id) ? 'original' as const : req.forceCutout?.includes(id) ? 'cutout' as const : 'auto' as const;
       log(`report: ${req.form.type}, ${inicial.length}+${final.length} photos`);
       progress({ stage: 'photos', fraction: 0.02 });
       const rm = await getRemover();
@@ -147,6 +149,8 @@ function registerIpc() {
       const pngs = await renderReportPhotos({
         inicial,
         final,
+        inicialChoice: req.inicial.map(choiceFor),
+        finalChoice: req.form.type === 'comparativo' ? req.final.map(choiceFor) : [],
         remover: rm,
         onProgress: (d, t) => {
           log(`report: photo ${d}/${t}`);
@@ -172,7 +176,11 @@ function registerIpc() {
       }
       progress({ stage: 'done', fraction: 1 });
       log(`report created ${res.designId}`);
-      return { ok: true, editUrl: res.editUrl, designId: res.designId, title: res.title };
+      const unreliableIds = [
+        ...pngs.unreliableInicial.map((i) => req.inicial[i]),
+        ...pngs.unreliableFinal.map((i) => req.final[i]),
+      ].filter((id): id is string => !!id);
+      return { ok: true, editUrl: res.editUrl, designId: res.designId, title: res.title, unreliableIds };
     } catch (e) {
       log(`report failed: ${(e as Error)?.stack ?? e}`);
       return { ok: false, code: errorCode(e), message: publicErrorDetail(e) };
@@ -263,7 +271,7 @@ function createWindow() {
     minHeight: 640 + TITLE_BAR_HEIGHT,
     useContentSize: true,
     show: false,
-    title: 'DR·QUIRO Reportes',
+    title: 'DR·QUIRO Reportes TEST',
     autoHideMenuBar: true,
     roundedCorners: true,
     thickFrame: true,
