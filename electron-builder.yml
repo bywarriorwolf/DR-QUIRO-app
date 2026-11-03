@@ -63,14 +63,33 @@ mac:
   icon: build/icon.png
   category: public.app-category.medical
   target:
+    # Separate dmgs. A universal app cannot share one onnxruntime build:
+    # 1.31 ships darwin-arm64 only; Intel uses the 1.23.2 alias package.
     - target: dmg
-      arch: [x64, arm64]
-  # Not signed / notarized (no Apple Developer account). See INSTALAR.md.
+      arch: [arm64, x64]
+  # No Apple Developer account: do not look up a Developer ID and do not notarize.
+  # identity null skips electron-builder signing. afterPack then ad-hoc signs
+  # (codesign --sign -) so Apple Silicon can launch the app. Hardened runtime
+  # stays off: it would block the unpacked .node binaries without entitlements.
   identity: null
   hardenedRuntime: false
   gatekeeperAssess: false
+  notarize: false
 dmg:
+  # ASCII volume name. The middle dot in the product name breaks some hdiutil calls.
+  title: DR-QUIRO Reportes ${version}
+  icon: build/icon.png
   artifactName: DR-QUIRO-Reportes-${version}-${arch}.${ext}
+  window:
+    width: 540
+    height: 380
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
 
 linux:
   icon: build/icon.png
