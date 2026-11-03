@@ -19,6 +19,7 @@ import {
   type CreateReportResult,
   type ProgressEvent,
 } from '../shared/ipc';
+import { formForSubmit } from '../shared/report';
 import { S } from '../shared/strings';
 import { THEME, TITLE_BAR_HEIGHT } from '../shared/theme';
 import { McpCanvaSession, MockCanvaSession, type CanvaSession } from './canva/connection';
@@ -163,7 +164,7 @@ function registerIpc() {
       });
       if (MOCK) lastMockDir = await saveMockOutput(pngs);
       const res = await runReport(canva.tools(), {
-        form: req.form,
+        form: formForSubmit(req.form),
         inicialPngs: pngs.inicial,
         finalPngs: pngs.final,
         assetCache: uploadedAssetIds,
@@ -341,6 +342,8 @@ app.whenReady().then(async () => {
     });
   } else {
     const store = new EncryptedFileSecretStore(path.join(app.getPath('userData'), 'canva-auth.bin'), safeStorage);
+    // Windows, macOS and Linux share this path: the system browser plus an
+    // http://127.0.0.1 loopback redirect. There is no custom URL scheme.
     canva = new McpCanvaSession(store, (url) => shell.openExternal(url), log);
     void canva.resume().then((ok) => {
       log(`canva resume: ${ok ? 'connected' : 'not connected'}`);

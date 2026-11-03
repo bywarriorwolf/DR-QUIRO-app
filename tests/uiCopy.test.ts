@@ -35,6 +35,10 @@ describe('Spanish UI copy', () => {
     expect(S.missingDespues).toBe('Te faltó subir las fotos de “DESPUÉS”');
     expect(S.wrongFormatBody).toBe('Solo se aceptan archivos PNG y JPG');
     expect(S.maxPhotos).toBe('Máximo 21 fotos');
+    expect(S.newReport).toBe('Nuevo reporte');
+    expect(S.newReportConfirm).toBe('¿Empezar un nuevo reporte? Se borrará lo que hay en pantalla.');
+    expect(S.startNew).toBe('Empezar nuevo');
+    expect(S.pickerCancel).toBe('Cancelar');
     expect(S.useOriginal).toBe('Usar foto original');
     expect(S.useCutout).toBe('Usar recorte');
     expect(S.errors.canva).toBe('Canva rechazó la operación. Inténtalo de nuevo en unos minutos.');

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PHOTOS, type ReportType } from '../shared/config';
 import type { AuthStatus, ImportedPhoto, ImportResult } from '../shared/ipc';
-import { validateReport, type InjuryKey, type ReportForm as Form } from '../shared/report';
+import { formForSubmit, screenHasDraft, validateReport, type InjuryKey, type ReportForm as Form } from '../shared/report';
+import { S } from '../shared/strings';
 import { api } from './api';
 import { Header } from './components/Header';
 import { Modal, type ModalState } from './components/Modal';
@@ -29,7 +30,18 @@ export function App() {
   const [importing, setImporting] = useState<{ tab: Tab; done: number; total: number } | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [modal, setModal] = useState<ModalState>(null);
+  const [confirmNew, setConfirmNew] = useState(false);
   const noticeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const generation = useRef(0);
+
+  useEffect(() => {
+    if (!confirmNew) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setConfirmNew(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [confirmNew]);
 
   useEffect(() => {
     void api.authStatus().then(setAuth);
@@ -72,11 +84,17 @@ export function App() {
       showNotice(t, 'max');
       return;
     }
+    const gen = generation.current;
     setImporting({ tab: t, done: 0, total: count });
     try {
-      addResult(t, await run());
+      const r = await run();
+      if (generation.current !== gen) {
+        if (r.photos.length) void api.releasePhotos(r.photos.map((x) => x.id));
+        return;
+      }
+      addResult(t, r);
     } finally {
-      setImporting(null);
+      if (generation.current === gen) setImporting(null);
     }
   };
 
@@ -91,16 +109,21 @@ export function App() {
     const t = activeTab;
     if (importing) return;
     if (photos[t].length >= PHOTOS.maxPerTab) return showNotice(t, 'max');
+    const gen = generation.current;
     setImporting({ tab: t, done: 0, total: 0 });
     try {
       const r = await api.pickPhotos();
+      if (generation.current !== gen) {
+        if (r.photos.length) void api.releasePhotos(r.photos.map((x) => x.id));
+        return;
+      }
       const room = PHOTOS.maxPerTab - photos[t].length;
       if (r.photos.length > room) {
         void api.releasePhotos(r.photos.map((x) => x.id));
         showNotice(t, 'max');
       } else addResult(t, r);
     } finally {
-      setImporting(null);
+      if (generation.current === gen) setImporting(null);
     }
   };
 
@@ -149,7 +172,39 @@ export function App() {
     setAuth(await api.disconnect());
   };
 
+  const clearScreen = () => {
+    generation.current += 1;
+    const ids = [...photos.inicial, ...photos.final].map((p) => p.id);
+    clearTimeout(noticeTimer.current);
+    setForm(EMPTY_FORM);
+    setTab('inicial');
+    setPhotos({ inicial: [], final: [] });
+    setUseOriginal({});
+    setNotice({ inicial: null, final: null });
+    setImporting(null);
+    setSubmitted(false);
+    setModal(null);
+    setMenuOpen(false);
+    setConfirmNew(false);
+    // Drops the app's private temp copies only. The files the user picked stay on disk.
+    if (ids.length) void api.releasePhotos(ids);
+  };
+
+  const requestNewReport = () => {
+    const draft = screenHasDraft({
+      form,
+      photoCount: photos.inicial.length + photos.final.length,
+      modalOpen: modal !== null,
+      notice: notice.inicial !== null || notice.final !== null,
+      importing: importing !== null,
+      submitted,
+    });
+    if (draft) setConfirmNew(true);
+    else clearScreen();
+  };
+
   const create = useCallback(async () => {
+    const gen = generation.current;
     setSubmitted(true);
     if (!validation.ok) {
       if (validation.missingInicialPhotos) setTab('inicial');
@@ -163,15 +218,19 @@ export function App() {
     setModal({ kind: 'progress', fraction: 0 });
     const chosen = [...photos.inicial, ...(form.type === 'comparativo' ? photos.final : [])];
     const res = await api.createReport({
-      form,
+      form: formForSubmit(form),
       inicial: photos.inicial.map((x) => x.id),
       final: form.type === 'comparativo' ? photos.final.map((x) => x.id) : [],
       useOriginal: chosen.filter((x) => useOriginal[x.id] === true).map((x) => x.id),
     });
+    if (generation.current !== gen) return;
     if (res.ok) setModal({ kind: 'done', url: res.editUrl });
     else {
       setModal({ kind: 'error', code: res.code, detail: res.message });
-      if (res.code === 'notConnected') setAuth(await api.authStatus());
+      if (res.code === 'notConnected') {
+        const status = await api.authStatus();
+        if (generation.current === gen) setAuth(status);
+      }
     }
   }, [validation, auth.connected, form, photos, useOriginal]);
 
@@ -186,6 +245,7 @@ export function App() {
             auth={auth}
             connecting={connecting}
             menuOpen={menuOpen}
+            onNewReport={requestNewReport}
             onConnect={connect}
             onToggleMenu={() => setMenuOpen((m) => !m)}
             onDisconnect={disconnect}
@@ -223,6 +283,21 @@ export function App() {
             onRetry={create}
             onClose={() => setModal(null)}
           />
+          {confirmNew && (
+            <div className="backdrop backdrop--top">
+              <div className="modal" role="dialog" aria-modal="true" aria-labelledby="new-report-title">
+                <div className="modal__title modal__title--ask" id="new-report-title">{S.newReportConfirm}</div>
+                <div className="modal__actions">
+                  <button type="button" className="pill-button pill-button--ghost" onClick={() => setConfirmNew(false)} autoFocus>
+                    {S.pickerCancel}
+                  </button>
+                  <button type="button" className="pill-button" onClick={clearScreen}>
+                    {S.startNew}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

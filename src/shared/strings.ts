@@ -10,6 +10,9 @@
  */
 export const S = {
   appTitle: 'DR·QUIRO Reportes', // app
+  newReport: 'Nuevo reporte', // app (tooltip)
+  newReportConfirm: '¿Empezar un nuevo reporte? Se borrará lo que hay en pantalla.', // app
+  startNew: 'Empezar nuevo', // app
   connectCanva: 'Conectar a Canva', // Figma
   connecting: 'Conectando…', // app
   disconnectCanva: 'Desconectar Canva', // Figma

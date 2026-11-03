@@ -180,20 +180,21 @@ export function buildEditBatches(state: EditingState, input: BuildInput): EditBa
     batches.push({ pageIndex: page, operations: perPage.get(page)! });
   }
 
-  // Injuries on whichever template actually has the four placeholders.
-  // Both report types require them in the form; Comparativo's page 11 does not,
-  // so that closing page is left untouched.
-  const fields = findInjuryFields(state);
-  if (fields) {
-    batches.push({
-      pageIndex: TEMPLATE.injuryPage,
-      operations: INJURY_KEYS.map((k, i) => ({
-        type: 'find_and_replace_text' as const,
-        element_id: fields[i].id,
-        find_text: fields[i].text,
-        replace_text: cleanText(form.injuries[k]),
-      })),
-    });
+  // Injury lines exist only on the Inicial template. Comparativo never sends them,
+  // even if the form still holds text from a previous Inicial selection.
+  if (type !== 'comparativo') {
+    const fields = findInjuryFields(state);
+    if (fields) {
+      batches.push({
+        pageIndex: TEMPLATE.injuryPage,
+        operations: INJURY_KEYS.map((k, i) => ({
+          type: 'find_and_replace_text' as const,
+          element_id: fields[i].id,
+          find_text: fields[i].text,
+          replace_text: cleanText(form.injuries[k]),
+        })),
+      });
+    }
   }
   return batches;
 }

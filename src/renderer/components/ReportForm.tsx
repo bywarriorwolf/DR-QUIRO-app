@@ -44,7 +44,8 @@ function DateField(props: {
 export function ReportForm({ form, errors, hasErrors, onChange, onInjury, onType, onCreate }: Props) {
   const [picker, setPicker] = useState<'fechaInicial' | 'fechaFinal' | null>(null);
   const inicial = form.type === 'inicial';
-  // Fecha Final is the only field that is ever disabled, and only for Reporte Inicial.
+  // Fecha Final is disabled only for Reporte Inicial.
+  // The four injury fields are disabled only for Reporte Comparativo (values stay in state).
   useEffect(() => {
     if (inicial) setPicker((p) => (p === 'fechaFinal' ? null : p));
   }, [inicial]);
@@ -96,15 +97,18 @@ export function ReportForm({ form, errors, hasErrors, onChange, onInjury, onType
       <div className="divider" />
       <div className="injuries">
         {INJURY_KEYS.map((k) => (
-          <label key={k} className="injury">
+          <label key={k} className={`injury${inicial ? '' : ' injury--off'}`}>
             <span className="injury__label">{S.injuries[k]}</span>
             <input
-              className={`field field--injury${errors[k] ? ' field--error' : ''}`}
+              className={`field field--injury${inicial && errors[k] ? ' field--error' : ''}`}
               value={form.injuries[k]}
               maxLength={MAX_LEN}
-              placeholder={errors[k] ? S.requiredField : S.injuryPlaceholder}
+              placeholder={inicial && errors[k] ? S.requiredField : S.injuryPlaceholder}
               onChange={(e) => onInjury(k, e.target.value)}
-              aria-invalid={!!errors[k]}
+              disabled={!inicial}
+              aria-disabled={!inicial}
+              aria-required={inicial}
+              aria-invalid={inicial && !!errors[k]}
               spellCheck={false}
             />
           </label>
