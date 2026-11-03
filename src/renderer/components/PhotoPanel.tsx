@@ -14,6 +14,7 @@ import { useEffect, useRef, useState, type DragEvent } from 'react';
 import type { ImportedPhoto } from '../../shared/ipc';
 import { S } from '../../shared/strings';
 import loader from '../assets/loader.png';
+import yodaSmall from '../assets/baby-yoda-waiting-small.webp';
 import { ProgressBar } from './ProgressBar';
 
 export type Tab = 'inicial' | 'final';
@@ -23,6 +24,8 @@ interface Props {
   tabs: Tab[];
   active: Tab;
   photos: ImportedPhoto[];
+  /** Photo ids the user wants placed as the original frame. Default is the cutout. */
+  useOriginal: Record<string, boolean>;
   tabErrors: Record<Tab, boolean>;
   notice: ZoneNotice;
   importing: { done: number; total: number } | null;
@@ -31,12 +34,26 @@ interface Props {
   onPick(): void;
   onReorder(photos: ImportedPhoto[]): void;
   onRemove(id: string): void;
+  onToggleOriginal(id: string): void;
 }
 
 const TAB_LABEL: Record<Tab, string> = { inicial: S.tabInicial, final: S.tabFinal };
 
-function SortablePhoto({ photo, index, onRemove }: { photo: ImportedPhoto; index: number; onRemove(id: string): void }) {
+function SortablePhoto({
+  photo,
+  index,
+  original,
+  onRemove,
+  onToggleOriginal,
+}: {
+  photo: ImportedPhoto;
+  index: number;
+  original: boolean;
+  onRemove(id: string): void;
+  onToggleOriginal(id: string): void;
+}) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: photo.id });
+  const modeLabel = original ? S.useCutout : S.useOriginal;
   return (
     <div
       ref={setNodeRef}
@@ -47,6 +64,18 @@ function SortablePhoto({ photo, index, onRemove }: { photo: ImportedPhoto; index
       aria-label={`${index + 1}. ${photo.name}`}
     >
       <img src={photo.thumbDataUrl} alt="" draggable={false} />
+      <button
+        type="button"
+        className="tile__mode"
+        aria-pressed={original}
+        aria-label={modeLabel}
+        title={modeLabel}
+        onPointerDown={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+        onClick={() => onToggleOriginal(photo.id)}
+      >
+        {modeLabel}
+      </button>
       <button
         type="button"
         className="tile__remove"
@@ -131,7 +160,7 @@ export function PhotoPanel(p: Props) {
         {p.photos.length === 0 ? (
           p.importing ? (
             <div className="zone__center">
-              <img className="loader" src={loader} alt="" draggable={false} />
+              <img className="loader" src={yodaSmall} alt="" draggable={false} />
               <div className="zone__uploading">{S.uploading}</div>
               <ProgressBar className="progress--small" fraction={p.importing.total ? p.importing.done / p.importing.total : 0} />
             </div>
@@ -158,7 +187,14 @@ export function PhotoPanel(p: Props) {
               <SortableContext items={p.photos.map((x) => x.id)} strategy={rectSortingStrategy}>
                 <div className="grid">
                   {p.photos.map((photo, i) => (
-                    <SortablePhoto key={photo.id} photo={photo} index={i} onRemove={p.onRemove} />
+                    <SortablePhoto
+                      key={photo.id}
+                      photo={photo}
+                      index={i}
+                      original={p.useOriginal[photo.id] === true}
+                      onRemove={p.onRemove}
+                      onToggleOriginal={p.onToggleOriginal}
+                    />
                   ))}
                   {p.importing && (
                     <div className="tile tile--status">

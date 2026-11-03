@@ -28,6 +28,37 @@ function textBlocks(result: ToolResultLike): string[] {
     .map((c) => c.text);
 }
 
+/**
+ * perform-editing-operations can return HTTP success while an individual
+ * operation failed. Surface that instead of committing a half-edited design.
+ */
+export function assertOperationsApplied(tool: string, result: ToolResultLike): void {
+  if (result.isError) return; // payloadOf throws with the server text
+  const texts = textBlocks(result);
+  let payload: Record<string, unknown> = {};
+  try {
+    payload = payloadOf(tool, result);
+  } catch {
+    return;
+  }
+  const results = payload.edit_operation_results;
+  if (!Array.isArray(results)) return;
+  const failed = results.filter((r) => {
+    if (!r || typeof r !== 'object') return false;
+    const status = (r as { status?: string }).status;
+    return !!status && status !== 'success';
+  });
+  if (!failed.length) return;
+  const detail = failed
+    .map((r) => {
+      const rec = r as { status?: string; message?: string; error?: { message?: string } };
+      return rec.error?.message || rec.message || rec.status || '';
+    })
+    .filter(Boolean)
+    .join('; ');
+  throw new CanvaToolError(tool, (detail || texts.join(' ') || 'una operación de edición falló').slice(0, 400));
+}
+
 /** Returns the JSON payload of a tool result (throws CanvaToolError on isError). */
 export function payloadOf(tool: string, result: ToolResultLike): Record<string, unknown> {
   const texts = textBlocks(result);
@@ -70,7 +101,9 @@ export function findString(obj: unknown, keys: string[], depth = 0): string | un
   return undefined;
 }
 
-const DESIGN_ID = /\bD[A-Za-z0-9_-]{10}\b/;
+/** Canva design ids start with D and are at least 11 characters. */
+const DESIGN_ID = /^D[A-Za-z0-9_-]{10,}$/;
+const DESIGN_ID_IN_TEXT = /\bD[A-Za-z0-9_-]{10,}\b/;
 
 export function parseCopyDesign(result: ToolResultLike): string {
   const p = payloadOf('copy-design', result);
@@ -80,7 +113,7 @@ export function parseCopyDesign(result: ToolResultLike): string {
       ? (p as { design: { id: string } }).design.id
       : undefined) ??
     findString(p, ['id']) ??
-    JSON.stringify(p).match(DESIGN_ID)?.[0];
+    JSON.stringify(p).match(DESIGN_ID_IN_TEXT)?.[0];
   if (!id || !DESIGN_ID.test(id)) throw new CanvaToolError('copy-design', 'no design_id in response');
   return id;
 }

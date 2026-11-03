@@ -32,9 +32,44 @@ export function fullName(form: Pick<ReportForm, 'nombre' | 'apellido'>): string 
   return cleanText(`${cleanText(form.nombre)} ${cleanText(form.apellido)}`);
 }
 
+export const BLANK_INJURIES: Record<InjuryKey, string> = {
+  tension: '',
+  tendon: '',
+  ligamento: '',
+  otras: '',
+};
+
 /**
- * Nombre, Apellidos, Fecha Inicial and the four injury fields are always required.
- * Fecha Final is required only for Comparativo (Inicial leaves it disabled).
+ * Copy sent to the main process and on to Canva.
+ * Comparativo keeps whatever the user typed in the form, but those four
+ * strings are not part of the request: the Comparativo template has no
+ * injury lines, and the fields are disabled.
+ */
+export function formForSubmit(form: ReportForm): ReportForm {
+  if (form.type !== 'comparativo') return form;
+  return { ...form, injuries: { ...BLANK_INJURIES } };
+}
+
+/** True when the screen is not the empty Reporte Inicial, so "Nuevo reporte" must ask first. */
+export function screenHasDraft(s: {
+  form: ReportForm;
+  photoCount: number;
+  modalOpen: boolean;
+  notice: boolean;
+  importing: boolean;
+  submitted: boolean;
+}): boolean {
+  if (s.photoCount > 0 || s.modalOpen || s.notice || s.importing || s.submitted) return true;
+  if (s.form.type !== 'inicial') return true;
+  if (s.form.nombre !== '' || s.form.apellido !== '') return true;
+  if (s.form.fechaInicial || s.form.fechaFinal) return true;
+  return INJURY_KEYS.some((k) => (s.form.injuries[k] ?? '') !== '');
+}
+
+/**
+ * Nombre, Apellidos and Fecha Inicial are always required.
+ * The four injury fields are required only for Reporte Inicial.
+ * Fecha Final (and the Final photo tab) are required only for Comparativo.
  * Photos: 1..21 on each tab the report type uses.
  */
 export function validateReport(
@@ -47,8 +82,9 @@ export function validateReport(
   if (!form.fechaInicial || !isValidDate(form.fechaInicial)) fields.fechaInicial = true;
   if (form.type === 'comparativo') {
     if (!form.fechaFinal || !isValidDate(form.fechaFinal)) fields.fechaFinal = true;
+  } else {
+    for (const k of INJURY_KEYS) if (!cleanText(form.injuries[k] ?? '')) fields[k] = true;
   }
-  for (const k of INJURY_KEYS) if (!cleanText(form.injuries[k] ?? '')) fields[k] = true;
   const missingInicialPhotos = photoCounts.inicial < PHOTOS.minPerTab;
   const missingFinalPhotos = form.type === 'comparativo' && photoCounts.final < PHOTOS.minPerTab;
   const tooMany = photoCounts.inicial > PHOTOS.maxPerTab || photoCounts.final > PHOTOS.maxPerTab;

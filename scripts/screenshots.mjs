@@ -84,7 +84,7 @@ const shot = (page, name) => page.screenshot({ path: path.join(OUT, `${name}.png
   await page.waitForSelector('.picker');
   await shot(page, '06_date_picker');
   await page.locator('.picker__day', { hasText: /^4$/ }).click();
-  await page.locator('.picker__text-btn', { hasText: 'OK' }).click();
+  await page.locator('.picker__text-btn', { hasText: 'Aceptar' }).click();
   await shot(page, '07_filled_inicial');
 
   // reorder by drag: move tile 1 after tile 3
@@ -115,7 +115,7 @@ const shot = (page, name) => page.screenshot({ path: path.join(OUT, `${name}.png
   await page.waitForFunction(() => document.querySelectorAll('.tile img').length === 19, null, { timeout: 60000 });
   await page.locator('.date-field').nth(1).click();
   await page.locator('.picker__day', { hasText: /^21$/ }).click();
-  await page.locator('.picker__text-btn', { hasText: 'OK' }).click();
+  await page.locator('.picker__text-btn', { hasText: 'Aceptar' }).click();
   await shot(page, '11_filled_comparativo_final_tab');
 
   await page.click('.account__menu');
@@ -155,7 +155,7 @@ const shot = (page, name) => page.screenshot({ path: path.join(OUT, `${name}.png
   for (let i = 0; i < 4; i++) await inj.nth(i).fill('No Aplica');
   await page.locator('.date-field').nth(0).click();
   await page.locator('.picker__day', { hasText: /^4$/ }).click();
-  await page.locator('.picker__text-btn', { hasText: 'OK' }).click();
+  await page.locator('.picker__text-btn', { hasText: 'Aceptar' }).click();
   await page.click('.create');
   await page.waitForSelector('.modal__title--error', { timeout: 240000 });
   await shot(page, '17_failure');

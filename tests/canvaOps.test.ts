@@ -65,7 +65,7 @@ describe('buildEditBatches', () => {
     expect(batches.map((b) => b.pageIndex)).toEqual([1, 4, 5, 6, 7, 8, 9, 10, 11]);
     const cover = batches[0].operations;
     expect(cover).toContainEqual(expect.objectContaining({ find_text: 'NOMBRE', replace_text: 'MARÍA JOSÉ PEÑA GÓMEZ' }));
-    expect(cover).toContainEqual(expect.objectContaining({ find_text: 'Mes DD, AAAA', replace_text: 'Julio 08, 2026' }));
+    expect(cover).toContainEqual(expect.objectContaining({ find_text: 'Mes DD, AAAA ', replace_text: 'Julio 08, 2026' }));
     expect(cover).toContainEqual({ type: 'update_title', title: 'REPORTE INICIAL María José Peña Gómez - Julio 08, 2026 - A5' });
     const fills = batches.flatMap((b) => b.operations).filter((o) => o.type === 'insert_fill');
     expect(fills).toHaveLength(21);
@@ -89,10 +89,14 @@ describe('buildEditBatches', () => {
     const batches = buildEditBatches(COMP, { form, inicialAssets: ini, finalAssets: fin });
     expect(batches.map((b) => b.pageIndex)).toEqual([1, 4, 5]);
     expect(batches[0].operations).toContainEqual(
-      expect.objectContaining({ find_text: 'Mes DD, AAAA - Mes DD, AAAA', replace_text: 'Julio 08, 2026 - Octubre 02, 2026' }),
+      expect.objectContaining({ find_text: 'Mes DD, AAAA - Mes DD, AAAA ', replace_text: 'Julio 08, 2026 - Octubre 02, 2026' }),
     );
     const allOps = batches.flatMap((b) => b.operations);
-    expect(JSON.stringify(allOps)).not.toContain('XXXX');
+    const raw = JSON.stringify(allOps);
+    expect(raw).not.toContain('XXXX');
+    expect(raw).not.toContain('Grado 1');
+    expect(raw).not.toContain('Hernia discal');
+    expect(allOps.some((o) => o.type === 'find_and_replace_text' && 'replace_text' in o && String(o.replace_text).includes('semana'))).toBe(false);
     for (let n = 1; n <= 5; n++) {
       const a = allOps.find((o) => o.type === 'insert_fill' && o.asset_id === `MAi${n - 1}`) as { top: number; left: number };
       const b = allOps.find((o) => o.type === 'insert_fill' && o.asset_id === `MAf${n - 1}`) as { top: number; left: number };

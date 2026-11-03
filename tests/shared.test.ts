@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { compareDates, daysInMonth, formatFieldDate, formatPickerHeader, formatReportDate, isValidDate } from '../src/shared/dates';
 import { createReportSchema, importSchema, openUrlSchema, releaseSchema } from '../src/shared/ipc';
-import { buildTitle, coverDate, coverName, slotForPhoto, TEMPLATE_CAPACITY, validateReport } from '../src/shared/report';
+import { buildTitle, coverDate, coverName, formForSubmit, screenHasDraft, slotForPhoto, TEMPLATE_CAPACITY, validateReport } from '../src/shared/report';
 import { makeForm } from './helpers';
 
 describe('dates', () => {
@@ -37,16 +37,50 @@ describe('validateReport (spec rules)', () => {
     expect(r.missingInicialPhotos).toBe(true);
     expect(r.missingFinalPhotos).toBe(false);
   });
-  it('Comparativo: every field is required, including the 4 injuries, Fecha Final and Final photos', () => {
+  it('Comparativo does not require the 4 injuries and does not flag them; Fecha Final and Final photos are required', () => {
     const f = makeForm('comparativo', {
       fechaFinal: null,
       injuries: { tension: '', tendon: ' ', ligamento: '', otras: '' },
     });
     const r = validateReport(f, { inicial: 3, final: 0 });
     expect(r.ok).toBe(false);
-    expect(r.fields).toEqual({ fechaFinal: true, tension: true, tendon: true, ligamento: true, otras: true });
+    expect(r.fields).toEqual({ fechaFinal: true });
+    expect(r.fields.tension).toBeUndefined();
     expect(r.missingInicialPhotos).toBe(false);
     expect(r.missingFinalPhotos).toBe(true);
+  });
+  it('Comparativo with the injury fields blank is valid when the rest is complete', () => {
+    const f = makeForm('comparativo', { injuries: { tension: '', tendon: '', ligamento: '', otras: '' } });
+    const r = validateReport(f, { inicial: 1, final: 1 });
+    expect(r.ok).toBe(true);
+    expect(r.fields).toEqual({});
+  });
+  it('formForSubmit keeps injury text on Inicial and blanks it for Comparativo without mutating the form', () => {
+    const inicial = makeForm('inicial');
+    expect(formForSubmit(inicial)).toBe(inicial);
+    const comparativo = makeForm('comparativo');
+    const sent = formForSubmit(comparativo);
+    expect(sent).not.toBe(comparativo);
+    expect(sent.injuries).toEqual({ tension: '', tendon: '', ligamento: '', otras: '' });
+    expect(comparativo.injuries.tension).toBe('Grado 1 > 2-8 semanas');
+    expect(comparativo.injuries.otras).toBe('Hernia discal L4-L5');
+  });
+  it('screenHasDraft asks before wiping anything the user can see', () => {
+    const empty = makeForm('inicial', {
+      nombre: '',
+      apellido: '',
+      fechaInicial: null,
+      fechaFinal: null,
+      injuries: { tension: '', tendon: '', ligamento: '', otras: '' },
+    });
+    const blank = { form: empty, photoCount: 0, modalOpen: false, notice: false, importing: false, submitted: false };
+    expect(screenHasDraft(blank)).toBe(false);
+    expect(screenHasDraft({ ...blank, form: { ...empty, nombre: 'Ana' } })).toBe(true);
+    expect(screenHasDraft({ ...blank, form: { ...empty, type: 'comparativo' } })).toBe(true);
+    expect(screenHasDraft({ ...blank, form: { ...empty, injuries: { ...empty.injuries, tendon: 'x' } } })).toBe(true);
+    expect(screenHasDraft({ ...blank, photoCount: 1 })).toBe(true);
+    expect(screenHasDraft({ ...blank, modalOpen: true })).toBe(true);
+    expect(screenHasDraft({ ...blank, submitted: true })).toBe(true);
   });
   it('Inicial does not require Fecha Final, even when it is empty or not a real date', () => {
     expect(validateReport(makeForm('inicial', { fechaFinal: null }), { inicial: 1, final: 0 }).ok).toBe(true);
