@@ -34,7 +34,10 @@ jobs:
           - os: windows-latest
             dist: npm run dist:win
             files: release/*.exe
-          - os: macos-latest
+          # macos-latest is arm64 and, on this repo, is cancelled before it starts
+          # ("not acquired by a hosted runner" / arm64 capacity). Intel runners
+          # are a different pool. electron-builder still emits both dmgs there.
+          - os: macos-15-intel
             dist: npm run dist:mac
             files: release/*.dmg
     runs-on: ${{ matrix.os }}
@@ -49,7 +52,7 @@ jobs:
           cache: npm
       - run: npm ci
 
-      # macos-latest is one architecture. Both dmgs need sharp's matching binaries,
+      # The runner is one architecture. Both dmgs need sharp's matching binaries,
       # and both onnxruntime trees (1.31 arm64, 1.23.2 Intel alias) must be on disk.
       - name: Mac native binaries for arm64 and x64
         if: runner.os == 'macOS'
